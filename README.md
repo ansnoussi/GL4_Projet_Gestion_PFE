@@ -6,6 +6,27 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
+## How to contribute to this ?
+1- **clone the repo**
+```
+git clone https://github.com/ansnoussi/GL4_Projet_Gestion_PFE.git && cd GL4_Projet_Gestion_PFE
+```
+2- **go to the branch of your choice ('frontend' or 'backend')**
+```
+git checkout backend
+```
+3- **always make sure you have the latest changes**
+```
+git pull
+```
+4- **do your work**
+5- **commit and push the work**
+```
+git add .
+git commit -m "a meaningful name"
+git push
+```
+
 ## Run the Angular app
 Run `ng serve pfe` to run the angular app locally on http://localhost:4200/.
 
