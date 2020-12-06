@@ -14,6 +14,9 @@ Run `ng serve api` to start the Nest server locally on http://localhost:3333/api
 
 ⚠ *Important* : so that we don't run into any CORS issues while developing, a proxy configuration is set to proxy requests to http://localhost:4200/api to the NestJS server.
 
+## Run the whole stack
+Run `npm run dev` to start the Nest app and the Angular app concurrently.
+
 ## Generate a library
 
 Run `ng g @nrwl/angular:lib my-lib` to generate a library.
