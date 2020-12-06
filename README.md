@@ -19,7 +19,7 @@ git checkout backend
 ```
 git pull
 ```
-4- **do your work**
+4- **do your work** <br>
 5- **commit and push the work**
 ```
 git add .
