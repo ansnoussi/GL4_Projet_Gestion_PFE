@@ -8,6 +8,6 @@ import { Message } from '@gl4/api-interfaces';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  //hello$ = this.http.get<Message>('/api/hello');
   constructor(private http: HttpClient) {}
 }
