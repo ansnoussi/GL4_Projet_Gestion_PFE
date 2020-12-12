@@ -1,3 +1,3 @@
-const mongoUrl = 'mongodb://gl4user:5CMsEASbsCmtuD4f@cluster0.awyx9.mongodb.net/projet-gl4?retryWrites=true&w=majority';
+const mongoUrl = 'mongodb://127.0.0.1:27017/pfeGl4';
 
 export default mongoUrl;
