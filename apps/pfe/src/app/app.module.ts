@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { MatSliderModule } from '@angular/material/slider';
+
 
 /* FormsModule */
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -26,21 +26,26 @@ import { AddUserComponent } from './components/admin/add-user/add-user.component
 import { EnseignantComponent } from './components/enseignant/enseignant.component';
 import { ItemPfeComponent } from './components/enseignant/item-pfe/item-pfe.component';
 import { ItemEncadrementComponent } from './components/enseignant/item-encadrement/item-encadrement.component';
+import { StudentComponent } from './components/student/student.component';
+import { StudentAddSubjectComponent } from './components/student/student-add-subject/student-add-subject.component';
+import { HeaderComponent } from './components/navigation/header/header.component';
+import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdminComponent, AddUserComponent, EnseignantComponent, ItemPfeComponent, ItemEncadrementComponent],
-  imports: [BrowserModule, 
-    HttpClientModule, 
-    AppRoutingModule, 
-    BrowserAnimationsModule, 
+  declarations: [AppComponent, LoginComponent, AdminComponent, AddUserComponent, EnseignantComponent, ItemPfeComponent, ItemEncadrementComponent, StudentComponent, StudentAddSubjectComponent, HeaderComponent, SidenavListComponent, LayoutComponent],
+  imports: [BrowserModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
-    MatSliderModule],
+  ],
   providers: [],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]

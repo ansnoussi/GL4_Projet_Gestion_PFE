@@ -1,8 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 
-html,
-body {
+/* for sidenav to take a whole page */
+html, body {
+  margin: 0;
   height: 100%;
+  width: 100%;
 }
 
 body {
@@ -108,4 +110,3 @@ body {
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
 }
- 
