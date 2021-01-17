@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   login(username, password){
-    console.log('username: ', username,' password: ', password);
+    this.router.navigate(['/student']).then(r =>     console.log('username: ', username,' password: ', password));
   }
 
 

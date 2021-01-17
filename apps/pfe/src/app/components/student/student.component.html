@@ -1,14 +1,14 @@
-<mat-drawer-container class="example-container">
-  <mat-drawer #drawer class="example-sidenav" mode="side" opened="true">
-    <div id="buttons">
-    <button  mat-raised-button>
-      Ajouter Sujet
-    </button>
-    <button  mat-raised-button>
-      Upload Rapport PFE
-    </button>
-    </div>
-  </mat-drawer>
+<gl4-layout>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <gl4-sidenav-list (sidenavClose)="sidenav.close()"></gl4-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <gl4-header (sidenavToggle)="sidenav.toggle()"></gl4-header>
+    </mat-sidenav-content>
+    <main>
+      <p>Hello XYZ</p>
+    </main>
+  </mat-sidenav-container>
+</gl4-layout>
 
-
-</mat-drawer-container>
