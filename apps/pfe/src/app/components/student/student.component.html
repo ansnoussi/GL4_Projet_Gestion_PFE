@@ -4,7 +4,7 @@
       <gl4-sidenav-list (sidenavClose)="sidenav.close()"></gl4-sidenav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-      <gl4-header (sidenavToggle)="sidenav.toggle()"></gl4-header>
+      <gl4-header [showSideMenu]="true" (sidenavToggle)="sidenav.toggle()"></gl4-header>
     </mat-sidenav-content>
     <main>
       <p>Hello XYZ</p>

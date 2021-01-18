@@ -1,15 +1,15 @@
-<gl4-navbar></gl4-navbar>
+<gl4-header [showSideMenu]="false"></gl4-header>
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Liste des PFEs">
 
 
-        
+
         <div *ngFor="let pfe of listPfe">
             <gl4-item-pfe [pfe]="pfe"></gl4-item-pfe>
         </div>
-    
-        
-        
+
+
+
     </mat-tab>
     <mat-tab label="Liste des encadrements">
         <div *ngFor="let enc of listEnc">
