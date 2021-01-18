@@ -1,3 +1,14 @@
 .mat-tab-group {
     margin-bottom: 48px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  :host{
+    display: block;
+    margin-top: 1rem;
+}
+.info-text{
+    text-align: center;
+}

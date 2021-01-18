@@ -17,7 +17,7 @@ export class EnseignantComponent implements OnInit {
   ];
 
   listPfe:any=[
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
+    {titre:'Conception et Réalisation d’une application des gestions des activités d’un conseil de développement',etudiant:'etudiant',description:'description',date:'01/12/2020'},
     {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
     {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
     {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
