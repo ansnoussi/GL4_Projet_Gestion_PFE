@@ -9,13 +9,14 @@
   </div>
 
   <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-    <div mat-card-avatar class="header-icon" >
-      <img src="../header/Images/avatar.png">
-    </div>
     <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-      <li>
-        <a routerLink="/login">Déconnecter</a>
-      </li>
+      <form class="form-inline waves-light" mdbWavesEffect>
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          </div>
+        </form>
+          <button mat-stroked-button color="primary" class="btn" (click)="logout()">Deconnecter</button>
+     
     </ul>
   </div>
 </mat-toolbar>

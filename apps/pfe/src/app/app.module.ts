@@ -31,12 +31,13 @@ import { StudentAddSubjectComponent } from './components/student/student-add-sub
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { NavbarComponent } from './components/enseignant/navbar/navbar.component';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdminComponent, AddUserComponent, EnseignantComponent, ItemPfeComponent, ItemEncadrementComponent, StudentComponent, StudentAddSubjectComponent, HeaderComponent, SidenavListComponent, LayoutComponent],
+  declarations: [AppComponent, LoginComponent, AdminComponent, AddUserComponent, EnseignantComponent, ItemPfeComponent, ItemEncadrementComponent, StudentComponent, StudentAddSubjectComponent, HeaderComponent, SidenavListComponent, LayoutComponent, NavbarComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
