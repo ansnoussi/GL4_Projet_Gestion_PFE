@@ -33,6 +33,8 @@ import { SidenavListComponent } from './components/navigation/sidenav-list/siden
 import { LayoutComponent } from './components/layout/layout.component';
 import { UploaderRapportPFEComponent } from './components/student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 
@@ -46,7 +48,7 @@ import { ListPfeComponent } from './components/student/list-pfe/list-pfe.compone
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule,
+    FlexLayoutModule, MatProgressBarModule, MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],

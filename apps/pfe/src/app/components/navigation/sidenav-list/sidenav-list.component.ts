@@ -20,8 +20,8 @@ export class SidenavListComponent implements OnInit {
     this.onSidenavClose();
   }
 
-  uploaderPfe(){
-    this.router.navigateByUrl('uploader-rapport-pfe');
+  onUploadPfe(){
+     this.router.navigateByUrl('uploader-rapport-pfe');
     this.onSidenavClose();
   }
 

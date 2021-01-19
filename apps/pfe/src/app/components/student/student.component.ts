@@ -8,8 +8,14 @@ import { Component, OnInit } from '@angular/core';
 export class StudentComponent implements OnInit {
 
   constructor() { }
+
   showFiller = false;
+
   ngOnInit(): void {
+  }
+
+  onFileComplete(data: any) {
+    console.log(data); // We just print out data bubbled up from event emitter.
   }
 
 }
