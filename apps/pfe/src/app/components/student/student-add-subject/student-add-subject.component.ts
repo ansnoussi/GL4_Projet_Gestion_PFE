@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentAddSubjectComponent implements OnInit {
 
+
+  pfe = {
+    'titre':'',
+    'entreprise':'',
+    'domaine':'',
+    };
   constructor() { }
 
   ngOnInit(): void {

@@ -5,7 +5,9 @@ import { AdminComponent } from './components/admin/admin.component';
 import { EnseignantComponent } from './components/enseignant/enseignant.component';
 import { LoginComponent } from './components/login/login.component';
 import { StudentComponent } from './components/student/student.component';
-import { AppComponent } from './app.component';
+import { StudentAddSubjectComponent } from './components/student/student-add-subject/student-add-subject.component';
+import { UploaderRapportPFEComponent } from './components/student/uploader-rapport-pfe/uploader-rapport-pfe.component';
+import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
 
 
 
@@ -19,7 +21,14 @@ const routes: Routes = [
   ]
 },
   {path: 'enseignant', component: EnseignantComponent},
-  {path: 'student', component: StudentComponent}
+  {path: 'student', component: StudentComponent,
+  children: [
+    {path: '', redirectTo: 'list-pfe',pathMatch:'full'},
+    {path: 'add-subject', component: StudentAddSubjectComponent},
+    {path:'uploader-rapport-pfe',component:UploaderRapportPFEComponent},
+    {path:'list-pfe', component:ListPfeComponent}
+  ]
+}
 ];
 
 @NgModule({

@@ -1,8 +1,11 @@
 <mat-nav-list>
-  <a mat-list-item routerLink="/home" (click)="onSidenavClose()">
+  <a mat-list-item href="student/add-subject" (click)="onSidenavClose()">
     <mat-icon>note_add</mat-icon> <span class="nav-caption">Ajouter Sujet</span>
   </a>
-  <a mat-list-item routerLink="/owner" (click)="onSidenavClose()">
+  <a mat-list-item href="student/uploader-rapport-pfe" (click)="onSidenavClose()">
     <mat-icon>cloud_upload</mat-icon> <span class="nav-caption">Uploader Rapport PFE</span>
+  </a>
+  <a mat-list-item href="student/list-pfe" (click)="onSidenavClose()">
+    <mat-icon>home</mat-icon> <span class="nav-caption">Liste des PFEs</span>
   </a>
 </mat-nav-list>

@@ -114,3 +114,47 @@ body {
 .login-wrapper .mat-form-field-appearance-legacy .mat-form-field-infix {
   padding: 0.8375em 0;
 }
+
+
+/********************/
+.add-subject .mat-form-field-appearance-legacy .mat-form-field-infix {
+  padding: 0.8375em 0;
+}
+
+.add-subject .example-form {
+  min-width: 100%;
+  max-width: 300px;
+  width: 100%;
+}
+
+.add-subject .example-full-width,
+.add-subject .btn-block {
+  width: 100%;
+}
+
+.add-subject mat-card-header {
+  text-align: center;
+  width: 100%;
+  display: block;
+  font-weight: 700;
+}
+
+.add-subject mat-card-header mat-card-title {
+  font-size: 30px;
+  margin: 0;
+}
+
+.add-subject .mat-card {
+  padding: 40px 70px 50px;
+}
+
+.add-subject .mat-stroked-button {
+  border: 1px solid currentColor;
+  line-height: 54px;
+  background: #edf9fa;
+}
+
+.add-subject {
+  height: 100%;
+ padding-top: 3%;
+}

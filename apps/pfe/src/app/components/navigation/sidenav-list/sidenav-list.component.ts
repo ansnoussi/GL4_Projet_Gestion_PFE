@@ -1,4 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'gl4-sidenav-list',
@@ -9,9 +10,24 @@ export class SidenavListComponent implements OnInit {
 
   @Output() sidenavClose = new EventEmitter();
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  addSubject(){
+    this.router.navigateByUrl('add-subject');
+    this.onSidenavClose();
+  }
+
+  uploaderPfe(){
+    this.router.navigateByUrl('uploader-rapport-pfe');
+    this.onSidenavClose();
+  }
+
+  listPfe(){
+    this.router.navigateByUrl('list-pfe');
+
   }
 
   public onSidenavClose = () => {
