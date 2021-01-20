@@ -8,28 +8,73 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class StudentAddSubjectComponent implements OnInit {
 
+  constructor() { }
 
-  pfe = {
-    'titre':'',
-    'entreprise':'',
-    'domaine':'',
-    };
-
-    isLinear = false;
-    firstFormGroup: FormGroup;
-    secondFormGroup: FormGroup;
-
-  constructor(private _formBuilder: FormBuilder) { }
-
-  ngOnInit(): void {
-
-    this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ['', Validators.required]
-    });
-    this.secondFormGroup = this._formBuilder.group({
-      secondCtrl: ['', Validators.required]
-    });
-
+  ngOnInit(){
   }
 
+
+
+  specialite: any = ['Biologie Industrielle', 'Chimie Industrielle', 'Informatique Industrielle et Automatique','Instrumentation et Maintenance Industrielle','Réseaux Informatiques et Télécommunications','Génie Logiciel'];
+  niveau:any = ['3ème','4ème','5ème']
+
+
+
+    sujet={
+      'titre':'',
+      'objectif':'',
+      'date_debut':'',
+      'date_fin':''
+    } 
+
+    student = {
+      'specialite':'',
+      'nom':'',
+      'prenom':'',
+      'niveau':'',
+      'numIns':'',
+      'cin':'',
+      'nationnalite':'',
+      'passeport':'',
+      'adresse':'',
+      'codePostal':'',
+      'ville':'',
+      'email':'',
+      'tel':''
+    }
+
+    entreprise = {
+      'responsable':'',
+      'adresse':'',
+      'codePostal':'',
+      'ville':'',
+      'pays':'',
+      'tel':'',
+      'fax':'',
+      'email':'',
+      'website':''
+    }
+
+    encadrantEntreprise = {
+      'nom':'',
+      'prenom':'',
+      'grade':'',
+      'tel':'',
+      'poste':'',
+      'fax':'',
+      'mobile':'',
+      'email':''
+    }
+
+
+
+    ajouterSujet(){
+      console.log("Sujet:", this.sujet);
+      console.log("Studant:", this.student);
+      console.log("Entreprise:", this.entreprise);
+      console.log("Encadrant:", this.encadrantEntreprise);
+    }
+
+
+ 
 }

@@ -1,45 +1,207 @@
 
-<mat-horizontal-stepper  #stepper>
-  <mat-step [stepControl]="firstFormGroup">
-    <form [formGroup]="firstFormGroup">
-      <ng-template matStepLabel>Sujet</ng-template>
-      <mat-form-field>
-        <mat-label>Intitulé</mat-label>
-        <input matInput placeholder="Titre du sujet" formControlName="firstCtrl" required>
-      </mat-form-field>
+  <mat-card class="box">
+    
+    <form >
 
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
+      <!--Sujet-->
+      <mat-card-header>
+        <mat-card-title>Sujet</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field>
+          <input [(ngModel)]="sujet.titre" name="titre" matInput placeholder="Intitulé">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <textarea [(ngModel)]="sujet.objectif" name="objectif" type="text" matInput placeholder="Objectif du travail demandé"></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <mat-label>Date du stage</mat-label>
+          <mat-date-range-input  [rangePicker]="picker">
+            <input matStartDate [(ngModel)]="sujet.date_debut" placeholder="Start date" [ngModelOptions]="{standalone: true}">
+            <input matEndDate [(ngModel)]="sujet.date_fin" placeholder="End date" [ngModelOptions]="{standalone: true}">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+      </mat-card-content>
+      
+
+      <!--Etudiant-->
+      <mat-card-header>
+        <mat-card-title>Etudiant</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field>
+          <input [(ngModel)]="student.nom" name="nomEtu" matInput placeholder="Nom">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.prenom" name="prenomETu" matInput placeholder="Prenom">
+        </mat-form-field>
+        <br>
+        
+        <mat-form-field>
+          <mat-label>Spécialité</mat-label>
+          <mat-select [(ngModel)]="student.specialite" name="specialite">
+            <mat-option [value]="specialite" *ngFor="let specialite of specialite">{{specialite}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Niveau</mat-label>
+          <mat-select [(ngModel)]="student.niveau" name="niveau">
+            <mat-option [value]="niveau" *ngFor="let niveau of niveau">{{niveau}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+
+        <mat-form-field>
+          <input [(ngModel)]="student.numIns" name="ins" matInput placeholder="Numero d'inscription">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.cin" name="cin" matInput placeholder="CIN">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.nationnalite" name="nat" matInput placeholder="Nationnalite">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.passeport" name="passeport" matInput placeholder="Passeport">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.adresse" name="adresse" matInput placeholder="Adresse personnel">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.codePostal" name="codePostale" matInput placeholder="Code Postale">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.ville" name="ville" matInput placeholder="Ville">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.email" name="email" matInput placeholder="Email">
+        </mat-form-field>
+        <br>
+        <mat-form-field>
+          <input [(ngModel)]="student.tel" name="telEtu" matInput placeholder="Téléphone">
+        </mat-form-field>
+        <br>
+        
+      </mat-card-content>
+
+
+
+            <!--Entreprise-->
+            <mat-card-header>
+              <mat-card-title>Entreprise d'accueil</mat-card-title>
+            </mat-card-header>
+      
+            <mat-card-content>
+      
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.responsable" name="responsableEntreprise" matInput placeholder="Responsable de l'entreprise">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.adresse" name="adresseEntreprise" matInput placeholder="Adresse personnel">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.codePostal" name="codePostaleEntreprise" matInput placeholder="Code Postale">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.ville" name="villeEntreprise" matInput placeholder="Ville">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.pays" name="pays" matInput placeholder="pays">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.email" name="emailEntreprise" matInput placeholder="Email">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.tel" name="telEntreprise" matInput placeholder="Téléphone">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.fax" name="faxEntreprise" matInput placeholder="Fax">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="entreprise.website" name="siteEntreprise" matInput placeholder="Site">
+              </mat-form-field>
+              <br>
+              
+            </mat-card-content>
+
+
+            
+            <!--Encadrant de l'Entreprise-->
+            <mat-card-header>
+              <mat-card-title>Encadrant à l'entreprise</mat-card-title>
+            </mat-card-header>
+      
+            <mat-card-content>
+      
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.nom" name="encadrantEntrepriseNom" matInput placeholder="Nom">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.prenom" name="encadrantEntreprisePrenom" matInput placeholder="Prenom">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.grade" name="encadrantEntrepriseGrade" matInput placeholder="Grade/Specialite">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.email" name="encadrantEntrepriseEmail" matInput placeholder="Email">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.tel" name="encadrantEntrepriseTel" matInput placeholder="Téléphone">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.poste" name="encadrantEntreprisePoste" matInput placeholder="Poste">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.fax" name="encadrantEntrepriseFax" matInput placeholder="Fax">
+              </mat-form-field>
+              <br>
+              <mat-form-field>
+                <input [(ngModel)]="encadrantEntreprise.mobile" name="encadrantEntrepriseMobile" matInput placeholder="Mobile">
+              </mat-form-field>
+              <br>
+              
+            </mat-card-content>
+
+
+
+
     </form>
-  </mat-step>
-  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
-    <form [formGroup]="secondFormGroup">
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
-               required>
-      </mat-form-field>
 
 
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-horizontal-stepper>
+
+
+
+
+    <button mat-stroked-button color="primary" class="btn-block" (click)="ajouterSujet()">Ajouter</button>
+    
+  </mat-card>

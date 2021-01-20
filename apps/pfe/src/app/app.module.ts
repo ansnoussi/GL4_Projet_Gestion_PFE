@@ -36,7 +36,8 @@ import { ListPfeComponent } from './components/student/list-pfe/list-pfe.compone
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 
@@ -62,6 +63,7 @@ import { MatStepperModule } from '@angular/material/stepper';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    MatDatepickerModule, MatNativeDateModule,
     FlexLayoutModule, MatProgressBarModule, MatDialogModule,MatStepperModule
   ],
   providers: [],
