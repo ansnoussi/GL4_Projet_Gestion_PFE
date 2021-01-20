@@ -5,7 +5,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 //import mongoUrl from './config/db'
-import { EntrepriseController } from './controllers/entreprise/entreprise.controller';
 import { EtudiantController } from './controllers/etudiant/etudiant.controller';
 import { EnseignantController } from './controllers/enseignant/enseignant.controller';
 import { AuthModule } from './auth/auth.module';
@@ -18,7 +17,7 @@ import { UsersModule } from './user/users.module';
     AuthModule,
     UsersModule,
   ],
-  controllers: [AppController, EntrepriseController, EtudiantController, EnseignantController],
+  controllers: [AppController, EtudiantController, EnseignantController],
   providers: [AppService],
 })
 export class AppModule {}
