@@ -1,26 +1,22 @@
 <mat-dialog-actions align="end">
   <button
-  style="
-  padding: 0;
-  border: none;
-  background: none;"
-  mat-button mat-dialog-close>
+    class="close"
+    mat-button
+    mat-dialog-close>
      <i class="material-icons">close</i>
   </button>
-     
-  
+
  </mat-dialog-actions>
 
- <br>
- <h3>Uploader rapport PFE</h3>
-<button class="upload-button" mat-button color="warn"  (click)="onUploadClick()">
+ <h2 class="center-text">Uploader rapport PFE</h2>
+
+<button *ngIf="!uploadComplete" class="upload-button center" mat-button color="warn"  (click)="onUploadClick()">
     <mat-icon>file_upload</mat-icon>
     Upload
   </button>
-  <br/>
-  <ul>
-    <li *ngFor="let file of files" [@fadeInOut]="file.state">
-      <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+  <ul *ngIf="!uploadComplete">
+    <li [@fadeInOut]="file.state">
+      <mat-progress-bar *ngIf="!uploadComplete" [value]="file.progress"></mat-progress-bar>
       <span id="file-label">
             {{file.data.name}}
         <a title="Retry" (click)="retryFile(file)" *ngIf="file.canRetry">
@@ -33,3 +29,12 @@
   <input type="file" id="fileUpload" name="fileUpload" multiple="multiple"
 
          accept="{{accept}}" style="display:none;"/>
+
+<div *ngIf="uploadComplete" class="center-text filename">
+    {{file.data.name}}
+</div>
+
+<button *ngIf="uploadComplete" class="done-button center" mat-button color="warn">
+  <mat-icon>done</mat-icon>
+  OK
+</button>

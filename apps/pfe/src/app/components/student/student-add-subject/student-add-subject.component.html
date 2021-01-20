@@ -13,6 +13,19 @@
       </div>
     </form>
   </mat-step>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Lamine</ng-template>
+      <mat-form-field>
+        <mat-label>Intitulé</mat-label>
+        <input matInput placeholder="Titre du Lamine" formControlName="firstCtrl" required>
+      </mat-form-field>
+
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
   <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
     <form [formGroup]="secondFormGroup">
       <mat-form-field>
@@ -30,7 +43,7 @@
 
       <div>
         <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
+        <button mat-button matStepperNext >Next</button>
       </div>
     </form>
   </mat-step>
