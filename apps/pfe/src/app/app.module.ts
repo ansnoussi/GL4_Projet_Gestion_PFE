@@ -18,6 +18,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 /* Components */
 import { LoginComponent } from './components/login/login.component';
+import { StudentAddSubjectComponent } from './components/student/student-add-subject/student-add-subject.component';
 
 /* HttpClientModule */
 import { HttpClientModule } from '@angular/common/http';
@@ -27,7 +28,6 @@ import { EnseignantComponent } from './components/enseignant/enseignant.componen
 import { ItemPfeComponent } from './components/enseignant/item-pfe/item-pfe.component';
 import { ItemEncadrementComponent } from './components/enseignant/item-encadrement/item-encadrement.component';
 import { StudentComponent } from './components/student/student.component';
-import { StudentAddSubjectComponent } from './components/student/student-add-subject/student-add-subject.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from './components/layout/layout.component';
@@ -35,12 +35,26 @@ import { UploaderRapportPFEComponent } from './components/student/uploader-rappo
 import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatStepperModule } from '@angular/material/stepper';
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, AdminComponent, AddUserComponent, EnseignantComponent, ItemPfeComponent, ItemEncadrementComponent, StudentComponent, StudentAddSubjectComponent, HeaderComponent, SidenavListComponent, LayoutComponent, UploaderRapportPFEComponent, ListPfeComponent],
+  declarations: [AppComponent, 
+    LoginComponent, 
+    AdminComponent, 
+    AddUserComponent, 
+    EnseignantComponent, 
+    ItemPfeComponent, 
+    ItemEncadrementComponent, 
+    StudentComponent, 
+    StudentAddSubjectComponent, 
+    HeaderComponent, 
+    SidenavListComponent, 
+    LayoutComponent, 
+    UploaderRapportPFEComponent, 
+    ListPfeComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
@@ -48,7 +62,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     AngularMaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    FlexLayoutModule, MatProgressBarModule, MatDialogModule
+    FlexLayoutModule, MatProgressBarModule, MatDialogModule,MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent],

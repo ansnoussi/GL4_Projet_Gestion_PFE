@@ -1,92 +1,45 @@
-<!--
-    <div class="row">
-    <div class="add-subject col-4" fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="box">
-            <mat-card-header>
-              <mat-card-title>Sujet</mat-card-title>
-            </mat-card-header>
-        
-            <form class="example-form">
-        
-              <mat-card-content>
-    
-                <mat-form-field class="example-full-width">
-                    <input [(ngModel)]="pfe.titre" name="titre" matInput placeholder="Titre">
-                  </mat-form-field>
-          
-                  <mat-form-field class="example-full-width">
-                    <input [(ngModel)]="pfe.entreprise" name="entreprise" type="text" matInput placeholder="entreprise">
-                  </mat-form-field>
-          
-                  <mat-form-field class="example-full-width">
-                    <input [(ngModel)]="pfe.domaine" name="domaine" matInput placeholder="Domaine">
-                  </mat-form-field>
-      
-        
-              </mat-card-content>
-            </form>
-      </mat-card>
-    </div> 
 
-    <div class="add-subject col-4" fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="box">
-            <mat-card-header>
-              <mat-card-title>Encadrant Societé</mat-card-title>
-            </mat-card-header>
-        
-            <form class="example-form">
-        
-              <mat-card-content>
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.titre" name="titre" matInput placeholder="Titre">
-                </mat-form-field>
-        
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.entreprise" name="entreprise" type="text" matInput placeholder="entreprise">
-                </mat-form-field>
-        
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.domaine" name="domaine" matInput placeholder="Domaine">
-                </mat-form-field>
-      
-        
-              </mat-card-content>
-        
-            </form>
-      </mat-card>
-    </div> 
+<mat-horizontal-stepper  #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Sujet</ng-template>
+      <mat-form-field>
+        <mat-label>Intitulé</mat-label>
+        <input matInput placeholder="Titre du sujet" formControlName="firstCtrl" required>
+      </mat-form-field>
 
-    <div class="add-subject col-4" fxLayout="row" fxLayoutAlign="center center">
-        <mat-card class="box">
-            <mat-card-header>
-              <mat-card-title>Encadrant Facculté</mat-card-title>
-            </mat-card-header>
-        
-            <form class="example-form">
-        
-              <mat-card-content>
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.titre" name="titre" matInput placeholder="Titre">
-                </mat-form-field>
-        
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.entreprise" name="entreprise" type="text" matInput placeholder="entreprise">
-                </mat-form-field>
-        
-                <mat-form-field class="example-full-width">
-                  <input [(ngModel)]="pfe.domaine" name="domaine" matInput placeholder="Domaine">
-                </mat-form-field>
-    
-              </mat-card-content>
-        
-            </form>
-      </mat-card>
-    </div> 
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Fill out your address">
+    <form [formGroup]="secondFormGroup">
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Address</mat-label>
+        <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+               required>
+      </mat-form-field>
 
 
-</div>
- 
--->
-    
-  
-     
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    <p>You are now done.</p>
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="stepper.reset()">Reset</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
