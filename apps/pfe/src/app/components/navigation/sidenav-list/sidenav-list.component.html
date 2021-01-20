@@ -2,10 +2,10 @@
   <a mat-list-item href="student/add-subject" (click)="onSidenavClose()">
     <mat-icon>note_add</mat-icon> <span class="nav-caption">Ajouter Sujet</span>
   </a>
-  <a mat-list-item href="student/uploader-rapport-pfe" (click)="onUploadPfe()">
-    <mat-icon>cloud_upload</mat-icon> <span class="nav-caption">Uploader Rapport PFE</span>
+  <a mat-list-item  (click)="openDialog()" >
+    <mat-icon>cloud_upload</mat-icon><span class="nav-caption">Uploader Rapport PFE</span>
   </a>
-  <a mat-list-item href="student/list-pfe" (click)="onSidenavClose()">
+  <a mat-list-item href="student/list-pfe" (click)="onUploadPfe()">
     <mat-icon>home</mat-icon> <span class="nav-caption">Liste des PFEs</span>
   </a>
 </mat-nav-list>
