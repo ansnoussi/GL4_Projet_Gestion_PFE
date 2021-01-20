@@ -24,15 +24,34 @@ li {
 .upload-button{
   background-color: dodgerblue;
   color: white;
-  margin-top: 20px;
+  margin-top: 120px;
   margin-bottom: 20px;
+}
+
+.done-button{
+  color: green;
+  margin-top: 170px;
 }
 
 .center{
   left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
-.progress-bar{
-  margin-left: 100px;
-  margin-right: 100px;
+.center-text{
+  text-align: center;
+}
+
+.close{
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.filename{
+  margin-left: 30px;
+  color: black;
+  font-size: 15px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
 }

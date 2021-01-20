@@ -21,7 +21,9 @@ export class UploaderRapportPFEComponent implements OnInit {
   /** Allow you to add handler after its completion. Bubble up response text from remote. */
   @Output() complete = new EventEmitter<string>();
 
-  public files: Array<FileUploadModel> = [];
+  uploadComplete = false;
+
+  public file : FileUploadModel;
 
   constructor(private _http: HttpClient){}
 
@@ -31,40 +33,36 @@ export class UploaderRapportPFEComponent implements OnInit {
   onUploadClick() {
     const fileUpload = document.getElementById('fileUpload') as HTMLInputElement;
     fileUpload.onchange = () => {
-      for (let index = 0; index < fileUpload.files.length; index++) {
-        const file = fileUpload.files[index];
-        this.files.push({ data: file, state: 'in',
-          inProgress: false, progress: 0, canRetry: false, canCancel: true });
-      }
-      this.uploadFiles();
+      this.file = { data: fileUpload.files[0], state: 'in', inProgress: false, progress: 0, canRetry: false, canCancel: true };
+      this.uploadFile();
     };
     fileUpload.click();
   }
 
   cancelFile(file: FileUploadModel) {
     file.sub.unsubscribe();
-    this.removeFileFromArray(file);
+    this.removeFile();
   }
 
   retryFile(file: FileUploadModel) {
-    this.uploadFile(file);
+    this.uploadFile();
     file.canRetry = false;
   }
 
-  private uploadFile(file: FileUploadModel) {
+  private uploadFile() {
     const fd = new FormData();
-    fd.append(this.param, file.data);
+    fd.append(this.param, this.file.data);
 
     const req = new HttpRequest('POST', this.target, fd, {
       reportProgress: true
     });
 
-    file.inProgress = true;
-    file.sub = this._http.request(req).pipe(
+    this.file.inProgress = true;
+    this.file.sub = this._http.request(req).pipe(
       map(event => {
         switch (event.type) {
           case HttpEventType.UploadProgress:
-            file.progress = Math.round(event.loaded * 100 / event.total);
+            this.file.progress = Math.round(event.loaded * 100 / event.total);
             break;
           case HttpEventType.Response:
             return event;
@@ -73,34 +71,23 @@ export class UploaderRapportPFEComponent implements OnInit {
       tap(message => { }),
       last(),
       catchError((error: HttpErrorResponse) => {
-        file.inProgress = false;
-        file.canRetry = true;
-        return of(`${file.data.name} upload failed.`);
+        this.file.inProgress = false;
+        this.file.canRetry = true;
+        return of(`${this.file.data.name} upload failed.`);
       })
     ).subscribe(
       (event: any) => {
         if (typeof (event) === 'object') {
-          this.removeFileFromArray(file);
+          this.uploadComplete = true;
           this.complete.emit(event.body);
         }
       }
     );
   }
 
-  private uploadFiles() {
-    const fileUpload = document.getElementById('fileUpload') as HTMLInputElement;
-    fileUpload.value = '';
 
-    this.files.forEach(file => {
-      this.uploadFile(file);
-    });
-  }
-
-  private removeFileFromArray(file: FileUploadModel) {
-    const index = this.files.indexOf(file);
-    if (index > -1) {
-      this.files.splice(index, 1);
-    }
+  private removeFile() {
+    this.file = null;
   }
 
 

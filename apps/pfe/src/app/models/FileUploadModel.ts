@@ -8,4 +8,7 @@ export class FileUploadModel {
   canRetry: boolean;
   canCancel: boolean;
   sub?: Subscription;
+
+  constructor(data: File) {
+  }
 }
