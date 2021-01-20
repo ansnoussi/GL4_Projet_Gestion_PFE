@@ -53,3 +53,5 @@ Run `ng g component my-component --project=my-app` to generate a new component.
 In our case we have 2 apps that we work on: 
 - api
 - pfe
+
+## [API Documentation (google drive)](https://docs.google.com/document/d/1DXMlNhXRMlfBhapSvZWi-8lfLtIMzSMKtFPTV8YO4ek/edit?usp=sharing) 
