@@ -17,19 +17,15 @@ export class SidenavListComponent implements OnInit {
   ngOnInit() {
   }
 
-  addSubject(){
-    this.router.navigateByUrl('add-subject');
+  onAddSubject(){
+    this.router.navigateByUrl('student/add-subject');
     this.onSidenavClose();
   }
 
-  onUploadPfe(){
-     this.router.navigateByUrl('uploader-rapport-pfe');
+
+  onListPfe(){
+    this.router.navigateByUrl('student/list-pfe');
     this.onSidenavClose();
-  }
-
-  listPfe(){
-    this.router.navigateByUrl('list-pfe');
-
   }
 
   public onSidenavClose = () => {
