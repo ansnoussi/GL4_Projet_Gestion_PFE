@@ -1,0 +1,13 @@
+<gl4-layout>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+      <gl4-sidenav-list (sidenavClose)="sidenav.close()"></gl4-sidenav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <gl4-header [showSideMenu]="true" (sidenavToggle)="sidenav.toggle()"></gl4-header>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</gl4-layout>

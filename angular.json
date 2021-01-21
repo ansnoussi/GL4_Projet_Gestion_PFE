@@ -22,6 +22,7 @@
               "apps/pfe/src/assets"
             ],
             "styles": [
+              "apps/pfe/src/custom-theme.scss",
               "apps/pfe/src/styles.css"
             ],
             "scripts": []
@@ -220,7 +221,7 @@
   },
   "cli": {
     "defaultCollection": "@nrwl/angular",
-    "analytics": "13a05393-9ee6-4f87-a527-ff79881e4fb4"
+    "analytics": false
   },
   "schematics": {
     "@nrwl/workspace": {

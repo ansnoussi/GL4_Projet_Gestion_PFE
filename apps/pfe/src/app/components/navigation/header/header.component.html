@@ -1,0 +1,23 @@
+<mat-toolbar color="primary">
+  <div *ngIf="showSideMenu">
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <span>Bonjour X</span>
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <form class="form-inline waves-light" mdbWavesEffect>
+          <div class="md-form mt-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          </div>
+        </form>
+        <img src="favicon.ico" alt="Avatar" class="avatar">
+          <button mat-stroked-button color="primary" class="btn" (click)="logout()">Déconnecter</button>
+
+    </ul>
+  </div>
+</mat-toolbar>

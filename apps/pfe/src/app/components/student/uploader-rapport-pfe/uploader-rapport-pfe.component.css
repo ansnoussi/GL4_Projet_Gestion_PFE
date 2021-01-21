@@ -1,0 +1,57 @@
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#file-label {
+  display: inline-flex;
+  vertical-align: middle;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+#file-label mat-icon {
+  font-size: 18px;
+  text-align: center;
+}
+
+#file-label a {
+  cursor: pointer;
+}
+
+.upload-button{
+  background-color: dodgerblue;
+  color: white;
+  margin-top: 120px;
+  margin-bottom: 20px;
+}
+
+.done-button{
+  color: green;
+  margin-top: 170px;
+}
+
+.center{
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.center-text{
+  text-align: center;
+}
+
+.close{
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.filename{
+  margin-left: 30px;
+  color: black;
+  font-size: 15px;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
