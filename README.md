@@ -6,6 +6,35 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
 
+## How to contribute to this ?
+1- **clone the repo**
+```
+git clone https://github.com/ansnoussi/GL4_Projet_Gestion_PFE.git && cd GL4_Projet_Gestion_PFE
+```
+2- **go to the branch of your choice ('frontend' or 'backend')**
+```
+git checkout backend
+```
+3- **always make sure you have the latest changes**
+```
+git pull
+```
+4- **do your work** <br>
+5- **commit and push the work**
+```
+git add .
+git commit -m "a meaningful name"
+git push
+```
+
+## Import the shared api interfaces
+All api interfaces are defined in the package `libs/api-interfaces`
+- example import :
+```
+import { CreateUserDto, LoginUserDto } from "@gl4/api-interfaces"
+```
+
+
 ## Run the Angular app
 Run `ng serve pfe` to run the angular app locally on http://localhost:4200/.
 
@@ -32,3 +61,5 @@ Run `ng g component my-component --project=my-app` to generate a new component.
 In our case we have 2 apps that we work on: 
 - api
 - pfe
+
+## [API Documentation (google drive)](https://docs.google.com/document/d/1DXMlNhXRMlfBhapSvZWi-8lfLtIMzSMKtFPTV8YO4ek/edit?usp=sharing) 
