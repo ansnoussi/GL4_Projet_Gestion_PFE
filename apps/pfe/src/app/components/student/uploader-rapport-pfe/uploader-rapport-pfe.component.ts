@@ -2,7 +2,7 @@ import { Component, Input, OnInit, Output, EventEmitter, Inject } from '@angular
 import { HttpClient, HttpErrorResponse, HttpEventType, HttpRequest } from '@angular/common/http';
 import { catchError, last, map, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
-import { FileUploadModel } from '../../../models/FileUploadModel';
+import { FileUpload } from '../../../models/FileUpload';
 
 @Component({
   selector: 'gl4-uploader-rapport-pfe',
@@ -23,7 +23,7 @@ export class UploaderRapportPFEComponent implements OnInit {
 
   uploadComplete = false;
 
-  public file : FileUploadModel;
+  public file : FileUpload;
 
   constructor(private _http: HttpClient){}
 
@@ -39,12 +39,12 @@ export class UploaderRapportPFEComponent implements OnInit {
     fileUpload.click();
   }
 
-  cancelFile(file: FileUploadModel) {
+  cancelFile(file: FileUpload) {
     file.sub.unsubscribe();
     this.removeFile();
   }
 
-  retryFile(file: FileUploadModel) {
+  retryFile(file: FileUpload) {
     this.uploadFile();
     file.canRetry = false;
   }
