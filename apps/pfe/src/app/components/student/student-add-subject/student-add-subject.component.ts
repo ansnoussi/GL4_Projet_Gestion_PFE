@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from '../../../models/Subject';
+import { SubjectService } from '../../../services/subject/subject.service';
 
 @Component({
   selector: 'gl4-student-add-subject',
@@ -9,7 +10,12 @@ import { Subject } from '../../../models/Subject';
 export class StudentAddSubjectComponent implements OnInit {
 
   subject: Subject = new Subject();
-  constructor() { }
+  startDate:Date=new Date();
+  endDate:Date= new Date();
+
+
+
+  constructor(private subjectService: SubjectService) { }
 
   ngOnInit(){
   }
@@ -17,6 +23,10 @@ export class StudentAddSubjectComponent implements OnInit {
 
 
   addSubject(){
+    console.log(typeof(this.subject.startDate));
+    this.subject.startDate = this.startDate.toLocaleString().split(' ')[0];
+    this.subject.endDate = this.endDate.toLocaleString().split(' ')[0];
+    this.subjectService.addSubject(this.subject);
   }
 
 

@@ -18,8 +18,8 @@
         <mat-form-field>
           <mat-label>Date du stage</mat-label>
           <mat-date-range-input  [rangePicker]="picker">
-            <input matStartDate [(ngModel)]="subject.startDate" placeholder="Start date" [ngModelOptions]="{standalone: true}" required>
-            <input matEndDate [(ngModel)]="subject.endDate" placeholder="End date" [ngModelOptions]="{standalone: true}" required>
+            <input matStartDate [(ngModel)]="startDate" placeholder="Start date" [ngModelOptions]="{standalone: true}" required>
+            <input matEndDate [(ngModel)]="endDate" placeholder="End date" [ngModelOptions]="{standalone: true}" required>
           </mat-date-range-input>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
@@ -34,6 +34,11 @@
             </mat-card-header>
 
             <mat-card-content>
+
+              <mat-form-field>
+                <input [(ngModel)]="subject.enterprise.name" name="nameEntreprise" matInput placeholder="Nom de l'entreprise" required>
+              </mat-form-field>
+              <br>
 
               <mat-form-field>
                 <input [(ngModel)]="subject.enterprise.responsible" name="responsableEntreprise" matInput placeholder="Responsable de l'entreprise" required>

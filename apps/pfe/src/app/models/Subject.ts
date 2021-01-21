@@ -1,6 +1,7 @@
 import { Enterprise } from './Entreprise';
 import { Student } from './Student';
 import { EnterpriseManager } from './EnterpriseManager';
+import { ModuleWithComponentFactories } from '@angular/core';
 
 
 export class Subject{

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from '../../../models/Subject';
+import { SubjectService } from '../../../services/subject/subject.service';
 
 @Component({
   selector: 'gl4-list-pfe',
@@ -8,15 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class ListPfeComponent implements OnInit {
 
 
-  listPfe:any=[
-    {titre:'Conception et Réalisation d’une application des gestions des activités d’un conseil de développement',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-  ];
+  listPfe:Subject[]=[];
   
-  constructor() { }
+  constructor(private subjectService:SubjectService) { 
+    this.listPfe=this.subjectService.getAllSubjects();
+  }
 
   ngOnInit(): void {
   }

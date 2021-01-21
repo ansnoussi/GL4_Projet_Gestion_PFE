@@ -12,8 +12,8 @@
 
     </mat-tab>
     <mat-tab label="Liste des encadrements">
-        <div *ngFor="let enc of listEnc">
-            <gl4-item-encadrement [encadrement]="enc"></gl4-item-encadrement>
+        <div *ngFor="let supervision of supervisionList">
+            <gl4-item-encadrement [supervision]="supervision"></gl4-item-encadrement>
         </div>
     </mat-tab>
 </mat-tab-group>

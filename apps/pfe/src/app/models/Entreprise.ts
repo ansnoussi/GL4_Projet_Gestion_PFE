@@ -1,4 +1,5 @@
 export class Enterprise{
+  public name: '';
   public responsible = '';
   public address = '';
   public postalCode = '';
