@@ -1,6 +1,6 @@
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
-import { Role } from '../role.enum';
+import { Role } from "@gl4/api-interfaces";
 import { IUser } from '../interfaces/user.interface';
 
 export const UserSchema = new mongoose.Schema({

@@ -1,8 +1,8 @@
 import { Controller, Get, Post, Body, UseGuards } from '@nestjs/common';
-import { CreateUserDto } from './dto/create-user.dto';
 import { UsersService } from './users.service';
 import { AuthGuard } from '@nestjs/passport';
-import { LoginUserDto } from './dto/login-user.dto';
+
+import { CreateUserDto, LoginUserDto } from "@gl4/api-interfaces"
 
 @Controller('users')
 export class UsersController {

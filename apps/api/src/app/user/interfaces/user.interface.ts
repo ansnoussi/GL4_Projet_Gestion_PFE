@@ -1,5 +1,5 @@
 import * as mongoose from 'mongoose';
-import { Role } from '../role.enum';
+import { Role } from "@gl4/api-interfaces";
 
 export interface IUser extends mongoose.Document {
     email : string,
