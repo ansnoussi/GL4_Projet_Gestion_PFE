@@ -27,6 +27,14 @@ git commit -m "a meaningful name"
 git push
 ```
 
+## Import the shared api interfaces
+All api interfaces are defined in the package `libs/api-interfaces`
+- example import :
+```
+import { CreateUserDto, LoginUserDto } from "@gl4/api-interfaces"
+```
+
+
 ## Run the Angular app
 Run `ng serve pfe` to run the angular app locally on http://localhost:4200/.
 
