@@ -8,12 +8,29 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './user/users.module';
 
+import { SujetModule } from './sujet/sujet.module';
+import { SoutenanceModule } from './soutenance/soutenance.module';
+import { SessionModule } from './session/session.module';
+import { SalleModule } from './salle/salle.module';
+import { EtudiantModule } from './etudiant/etudiant.module';
+import { EnseignantModule } from './enseignant/enseignant.module';
+import { AnneeModule } from './annee/annee.module';
+
+
 @Module({
   imports: [
     ConfigModule.forRoot(),
     MongooseModule.forRoot(process.env.DATABASE_URL),
     AuthModule,
     UsersModule,
+
+    SujetModule,
+    SoutenanceModule,
+    SessionModule,
+    SalleModule,
+    EtudiantModule,
+    EnseignantModule,
+    AnneeModule
   ],
   controllers: [AppController],
   providers: [AppService],
