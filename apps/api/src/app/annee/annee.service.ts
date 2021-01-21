@@ -8,8 +8,9 @@ export class AnneeService {
   constructor(@InjectModel('Annee') private anneeModel: Model<IAnnee>) { }
 
   async advanceYear(year): Promise<IAnnee> {
-    await  this.anneeModel.findOneAndUpdate({ isCurrent : true }, {isCurrent : false}):
-    let newYear = new this.anneeModel({year : year , isCurrent : true}):
+    //checks will be done in the controller
+    await  this.anneeModel.findOneAndUpdate({ isCurrent : true }, {isCurrent : false});
+    let newYear = new this.anneeModel({year : year , isCurrent : true});
     return await newYear.save();
   }
 
