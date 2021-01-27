@@ -11,7 +11,7 @@ import { PFE } from '../../../models/PFE';
 export class ListPfeComponent implements OnInit {
 
 
-  listPfe:PFE[]=[];
+  listPfe:PFE[] = [];
 
   constructor(private subjectService:SubjectService) {
     const subjects = this.subjectService.getAllSubjects();
@@ -60,3 +60,4 @@ export class ListPfeComponent implements OnInit {
   }
 
 }
+
