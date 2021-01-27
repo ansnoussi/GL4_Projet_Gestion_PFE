@@ -1,6 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { AddAUComponent } from '../../admin/add-au/add-au.component';
 import { UploaderRapportPFEComponent } from '../../student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 
 @Component({
@@ -40,7 +41,7 @@ export class SidenavListComponent implements OnInit {
     config = {
       maxWidth: '100vw',
       maxHeight: '100vh',
-      height: '60%',
+      height: '60%',    
       width: '50%',
     };
     const dialogRef = this.dialog.open(UploaderRapportPFEComponent,config);

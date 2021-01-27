@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../../services/admin/admin.service';
 
 @Component({
   selector: 'gl4-add-au',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddAUComponent implements OnInit {
 
-  constructor() { }
+  universityYearAdded:string='';
+
+  constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
+  }
+
+
+  addUniversityYear(){
+    this.adminService.addUniversityYear(this.universityYearAdded);
   }
 
 }

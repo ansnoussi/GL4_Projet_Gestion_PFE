@@ -1,0 +1,47 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+    width: 100%;
+  }
+  
+  mat-sidenav {
+    width: 250px;
+  }
+  
+  main {
+    padding: 10px;
+  }
+
+
+  /**/
+
+  
+  .mat-form-field {
+    margin-top: 16px;
+  }
+  
+  
+  
+  
+  input{
+    height: 100%;
+    width: 100%;
+  }
+  
+  mat-form-field{
+    width: 60%;
+  }
+  
+  .btn-block{
+    width: 60%;
+  }
+  
+  
+  @media (max-width: 800px) {
+    .box{
+      margin-left: 0px;
+    }
+  }
+  
+  input.ng-invalid.ng-touched.dirty{
+    border: red ;
+  }

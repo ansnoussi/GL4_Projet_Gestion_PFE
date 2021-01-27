@@ -6,6 +6,7 @@ import { Student } from '../../models/Student';
   providedIn: 'root'
 })
 export class AdminService {
+  
 
   students:Student[]=[];
   professors:Professor[]=[];
@@ -32,6 +33,10 @@ export class AdminService {
     return(this.professors);
   }
 
+
+  addUniversityYear(universityYearAdded: string) {
+    console.log(universityYearAdded);
+  }
 
 
 }
