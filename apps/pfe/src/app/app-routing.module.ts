@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { AddUserComponent } from './components/admin/add-user/add-user.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { EnseignantComponent } from './components/enseignant/enseignant.component';
 import { LoginComponent } from './components/login/login.component';
@@ -8,6 +7,8 @@ import { StudentComponent } from './components/student/student.component';
 import { StudentAddSubjectComponent } from './components/student/student-add-subject/student-add-subject.component';
 import { UploaderRapportPFEComponent } from './components/student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
+import { AddStudentComponent } from './components/admin/add-student/add-student.component';
+import { AddEnseignantComponent } from './components/admin/add-enseignant/add-enseignant.component';
 
 
 
@@ -16,11 +17,13 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent,
   children: [
-    { path: '', redirectTo: 'add-user', pathMatch: 'full' },
-    { path: 'add-user', component: AddUserComponent },
+    {path:'', redirectTo:'add-student', pathMatch:'full'},
+    {path: 'add-student', component:AddStudentComponent},
+    {path: 'add-professor', component:AddEnseignantComponent}
+   
   ]
 },
-  {path: 'enseignant', component: EnseignantComponent},
+  {path: 'professor', component: EnseignantComponent},
   {path: 'student', component: StudentComponent,
   children: [
     {path: '', redirectTo: 'list-pfe',pathMatch:'full'},

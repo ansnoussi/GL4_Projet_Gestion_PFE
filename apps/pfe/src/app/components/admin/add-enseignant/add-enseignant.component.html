@@ -1,1 +1,59 @@
-<p>add-enseignant works!</p>
+<mat-card class="box">
+    <form #addProfessorForm="ngForm">
+
+      <mat-card-header>
+        <mat-card-title>Ajouter enseignant</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-form-field>
+            <input [(ngModel)]="professor.lastname" name="lastname" type="text" matInput placeholder="Nom" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="professor.firstname" name="firstname" type="text" matInput placeholder="Prénom" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input [(ngModel)]="professor.grade" name="grade" type="text" matInput placeholder="Grade" required>
+          </mat-form-field>
+
+
+          <mat-form-field>
+            <input [(ngModel)]="professor.nationality" name="nationality" type="text" matInput placeholder="Nationnalité" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="professor.address" name="address" type="text" matInput placeholder="Adresse" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input [(ngModel)]="professor.city" name="city" type="text" matInput placeholder="Cité" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="professor.postalCode" name="postalCode" type="number" matInput placeholder="Code postal" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input [(ngModel)]="professor.phone" name="phone" type="number" matInput placeholder="Téléphone" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="professor.email" name="email" type="email" matInput placeholder="Email" required>
+          </mat-form-field>
+
+          <mat-form-field>
+            <input [(ngModel)]="professor.nationalIdentityCard" name="nationalIdentityCard" type="number" matInput placeholder="CIN" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input [(ngModel)]="professor.passport" name="passport" type="number" matInput placeholder="Passeport">
+          </mat-form-field>
+
+
+
+        </mat-card-content>
+  
+  
+              
+      </form>
+      <button mat-stroked-button color="primary" class="btn-block" [disabled]="addProfessorForm.invalid" (click)="addProfessor()">Ajouter</button>
+  
+    </mat-card>
+  

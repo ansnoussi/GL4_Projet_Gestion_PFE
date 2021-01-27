@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Professor } from '../../../models/Professor';
+import { AdminService } from '../../../services/admin/admin.service';
 
 @Component({
   selector: 'gl4-add-enseignant',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddEnseignantComponent implements OnInit {
 
-  constructor() { }
+  professor:Professor=new Professor();
+
+  constructor(private adminService:AdminService) { }
 
   ngOnInit(): void {
   }
+
+
+  addProfessor(){
+    this.adminService.addProfessor(this.professor);
+  }
+
+
 
 }

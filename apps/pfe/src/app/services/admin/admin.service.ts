@@ -1,15 +1,37 @@
 import { Injectable } from '@angular/core';
+import { Professor } from '../../models/Professor';
+import { Student } from '../../models/Student';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdminService {
 
+  students:Student[]=[];
+  professors:Professor[]=[];
+
   constructor() { }
 
-  addUser(user){
-    console.log(user);
+  addStudent(student:Student){
+    this.students.push(student);
+    console.log(this.students);
   }
+
+
+  getStudents(){
+    return(this.students);
+  }
+
+  addProfessor(professor:Professor){
+    this.professors.push(professor);
+    console.log(this.professors);
+  }
+
+
+  getProfessors(){
+    return(this.professors);
+  }
+
 
 
 }
