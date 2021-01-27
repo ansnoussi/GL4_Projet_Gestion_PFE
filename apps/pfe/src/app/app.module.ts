@@ -39,6 +39,9 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SearchComponent } from './components/search/search.component';
+import { AddAUComponent } from './components/admin/add-au/add-au.component';
+import { AddEnseignantComponent } from './components/admin/add-enseignant/add-enseignant.component';
+import { AddStudentComponent } from './components/admin/add-student/add-student.component';
 
 
 
@@ -56,7 +59,7 @@ import { SearchComponent } from './components/search/search.component';
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, SearchComponent],
+    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
