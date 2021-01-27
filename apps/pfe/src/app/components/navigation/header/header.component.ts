@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  universityYears=['2020/2021','2019/2020','2018/2019'];
+  public universityYearSelected='2020/2021';
+
   @Input() public showSideMenu;
   logout(){
     this.router.navigateByUrl('login');

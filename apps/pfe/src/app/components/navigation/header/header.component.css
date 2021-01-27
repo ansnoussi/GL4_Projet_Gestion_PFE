@@ -30,3 +30,8 @@ mat-toolbar{
   border-radius: 50%;
   background-color: white;
 }
+
+
+.padding-right{
+  margin-right: 25px;
+}
