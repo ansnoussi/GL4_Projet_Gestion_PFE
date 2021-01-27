@@ -53,6 +53,11 @@ export class StudentComponent implements OnInit {
       }
 
     })
+    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
+    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
+    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
+    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
+    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
   }
 
   showFiller = false;
