@@ -1,4 +1,4 @@
-export class Student{
+export class Professor{
   public ID = '';
   public lastname = '';
   public firstname = '';
@@ -7,8 +7,7 @@ export class Student{
   public email = '';
   public address = '';
   public city = '';
-  public speciality = '';
-  public studyLevel = '';
+  public grade = '';
   public nationality = '';
   public nationalIdentityCard ='';
   public passport = '';

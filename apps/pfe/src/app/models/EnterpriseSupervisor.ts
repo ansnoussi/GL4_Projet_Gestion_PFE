@@ -1,4 +1,4 @@
-export class EnterpriseManager{
+export class EnterpriseSupervisor{
   public lastname = '';
   public firstname = '';
   public grade = '';

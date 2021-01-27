@@ -20,10 +20,8 @@ export class StudentComponent implements OnInit {
         address: 'Cité Olympique',
         city: 'Tunis',
         email: 'laminebarghouda@gmail.com',
-        fax: null,
         phone: '58014893',
         ID: '1700000',
-        grade: 'Engineering',
         nationality: 'Tunisienne',
         passport: null,
         nationalIdentityCard: '09777111',
@@ -31,7 +29,7 @@ export class StudentComponent implements OnInit {
         speciality: 'GL',
         studyLevel: '5'
       },
-      enterpriseManager: {
+      enterpriseSupervisor: {
         lastname: 'BEN FOULEN',
         firstname: 'Flen',
         postalCode: 'XX458CB',

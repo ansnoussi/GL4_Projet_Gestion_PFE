@@ -1,7 +1,6 @@
 import { Enterprise } from './Entreprise';
 import { Student } from './Student';
-import { EnterpriseManager } from './EnterpriseManager';
-import { ModuleWithComponentFactories } from '@angular/core';
+import { EnterpriseSupervisor } from './EnterpriseSupervisor';
 
 
 export class Subject{
@@ -11,7 +10,7 @@ export class Subject{
   public endDate = '';
   public enterprise: Enterprise = new Enterprise();
   public student: Student = new Student();
-  public enterpriseManager: EnterpriseManager = new EnterpriseManager();
+  public enterpriseSupervisor: EnterpriseSupervisor = new EnterpriseSupervisor();
 
   constructor() {
   }

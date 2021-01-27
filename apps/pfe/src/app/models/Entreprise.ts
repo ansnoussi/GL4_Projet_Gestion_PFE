@@ -1,5 +1,5 @@
 export class Enterprise{
-  public name: '';
+  public name= '';
   public responsible = '';
   public description = '';
   public address = '';
