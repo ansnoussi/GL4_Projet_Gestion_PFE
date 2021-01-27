@@ -38,6 +38,20 @@ export class StudentComponent implements OnInit {
         fax: '76420000',
         grade: 'Grade'
       },
+      universitySupervisor: {
+        lastname: 'SELLAOUTI',
+        firstname: 'Aymen',
+        postalCode: 'XX458CB',
+        phone: "98554778",
+        email: 'mail@startup.tn',
+        grade: 'Maitre assisstant',
+        address: 'Cite Khadhra',
+        city: 'Tunis',
+        ID: "00014526",
+        nationalIdentityCard: '0978555',
+        nationality: 'Tunisienne',
+        passport: null
+      },
       enterprise: {
         phone: '71445888',
         description: 'nova Robotics conçoit, fabrique et commercialise des robots mobiles dans le domaine de la sécurité, la santé et la logistique.',
