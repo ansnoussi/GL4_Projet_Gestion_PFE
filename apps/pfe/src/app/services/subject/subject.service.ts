@@ -13,7 +13,7 @@ export class SubjectService {
     return(this.subjects);
   }
 
-  addSubject(subject:Subject){
+  addSubject(subject: Subject){
     this.subjects.push(subject);
   }
 

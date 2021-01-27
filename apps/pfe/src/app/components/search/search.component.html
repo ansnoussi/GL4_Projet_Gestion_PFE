@@ -1,0 +1,16 @@
+<div class="search-elements">
+
+  <div class="university-year">
+    <mat-form-field class="padding-right">
+      <mat-select [(ngModel)]="universityYearSelected" name="universityYear">
+        <mat-option [value]="universityYear" *ngFor="let universityYear of universityYears">{{universityYear}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div class="md-form mt-0">
+    <input class="form-control mr-sm-2 padding-right search-field" type="text" placeholder="Search">
+  </div>
+
+</div>

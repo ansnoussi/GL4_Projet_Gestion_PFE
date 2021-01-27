@@ -8,7 +8,7 @@ import { Subject } from '../../../models/Subject';
 })
 export class ItemPfeComponent implements OnInit {
 
-  @Input() pfe:Subject;
+  @Input() pfe: Subject;
   constructor() { }
 
   ngOnInit(): void {

@@ -38,24 +38,25 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { SearchComponent } from './components/search/search.component';
 
 
 
 @NgModule({
-  declarations: [AppComponent, 
-    LoginComponent, 
-    AdminComponent, 
-    AddUserComponent, 
-    EnseignantComponent, 
-    ItemPfeComponent, 
-    ItemEncadrementComponent, 
-    StudentComponent, 
-    StudentAddSubjectComponent, 
-    HeaderComponent, 
-    SidenavListComponent, 
-    LayoutComponent, 
-    UploaderRapportPFEComponent, 
-    ListPfeComponent],
+  declarations: [AppComponent,
+    LoginComponent,
+    AdminComponent,
+    AddUserComponent,
+    EnseignantComponent,
+    ItemPfeComponent,
+    ItemEncadrementComponent,
+    StudentComponent,
+    StudentAddSubjectComponent,
+    HeaderComponent,
+    SidenavListComponent,
+    LayoutComponent,
+    UploaderRapportPFEComponent,
+    ListPfeComponent, SearchComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,

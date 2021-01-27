@@ -1,0 +1,14 @@
+.search-elements{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+}
+
+.university-year{
+  margin: 10px;
+}
+
+.search-field{
+  margin: 10px;
+  width: 200px;
+}
