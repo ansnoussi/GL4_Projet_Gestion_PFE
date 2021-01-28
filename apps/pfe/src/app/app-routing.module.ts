@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent,
   children: [
-    {path:'', redirectTo: 'accepted-pfes', pathMatch: 'full'},
+    {path:'', redirectTo: 'pending-subjects', pathMatch: 'full'},
     {path: 'add-student', component: AddStudentComponent},
     {path: 'add-professor', component: AddEnseignantComponent},
     {path: 'add-university-year', component: AddAUComponent},

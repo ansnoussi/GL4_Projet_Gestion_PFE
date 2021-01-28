@@ -53,10 +53,6 @@ export class PfesListComponent implements OnInit {
       })
     })
 
-
-    console.log('list pfes'+this.pfeList);
-
-
    }
 
   ngOnInit(): void {

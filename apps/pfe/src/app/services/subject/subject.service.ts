@@ -5,6 +5,7 @@ import { Subject } from '../../models/Subject';
   providedIn: 'root'
 })
 export class SubjectService {
+  
   refuseSubject(subject: Subject) {
     this.pendingSubjects.splice(this.pendingSubjects.indexOf(subject),1);
     console.log(this.subjects);
