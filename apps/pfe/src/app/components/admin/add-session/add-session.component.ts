@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Session } from '../../../models/Session';
+import { SessionService } from '../../../services/session/session.service';
 import { Speciality } from '../../../models/Speciality';
 
 @Component({
@@ -78,13 +79,13 @@ export class AddSessionComponent implements OnInit {
 
 
   public session = new Session();
-  constructor() { }
+  constructor(private sessionService:SessionService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-
+  onAddSession(){
+    this.sessionService.addSession(this.session);
   }
 
 }
