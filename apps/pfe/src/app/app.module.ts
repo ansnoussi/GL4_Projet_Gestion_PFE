@@ -45,6 +45,7 @@ import { AdminSidenavComponent } from './components/admin/navigation/admin-siden
 import { AddSessionComponent } from './components/admin/add-session/add-session.component';
 import { PendingSubjectsComponent } from './components/admin/pending-subjects/pending-subjects.component';
 import { ItemPendingSubjectComponent } from './components/admin/pending-subjects/item-pending-subject/item-pending-subject.component';
+import { ReasonComponent } from './components/admin/pending-subjects/reason/reason.component';
 
 
 
@@ -61,7 +62,7 @@ import { ItemPendingSubjectComponent } from './components/admin/pending-subjects
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent],
+    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent, ReasonComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
