@@ -6,15 +6,21 @@ import { Subject } from '../../models/Subject';
 })
 export class SubjectService {
 
-  subjects:Subject[]=[]
+  subjects:Subject[]=[];
+  pendingSubjects:Subject[]=[];
 
 
   getAllSubjects(){
     return(this.subjects);
   }
 
+  getPendingSubjects(){
+    return(this.pendingSubjects);
+  }
+
   addSubject(subject: Subject){
     this.subjects.push(subject);
+    this.pendingSubjects.push(subject);
   }
 
 
