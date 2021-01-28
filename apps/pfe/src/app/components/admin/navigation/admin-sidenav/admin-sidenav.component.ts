@@ -39,7 +39,7 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   onCheckPendingSubjects(){
-    //this.router.navigateByUrl('admin/add-professor');
+    this.router.navigateByUrl('admin/pending-subjects');
     this.onSidenavClose();
   }
 

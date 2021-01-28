@@ -9,10 +9,10 @@ import { SubjectService } from '../../../services/subject/subject.service';
 })
 export class PendingSubjectsComponent implements OnInit {
 
-  pendingSubject:Subject[]=[];
+  pendingSubjects:Subject[]=[];
 
   constructor(private subjectService:SubjectService) {
-    this.pendingSubject=this.subjectService.getPendingSubjects();
+    this.pendingSubjects=this.subjectService.getPendingSubjects();
     this.subjectService.addSubject({
       title: 'Application OMS',
       objective: 'Conception et réalisation d’une application permettant la gestion des ordres d’achat, du planning des ventes et de génération de bordereaux de facturation.',
