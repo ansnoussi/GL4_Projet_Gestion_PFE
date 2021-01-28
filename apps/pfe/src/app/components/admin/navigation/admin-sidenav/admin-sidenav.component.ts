@@ -45,7 +45,7 @@ export class AdminSidenavComponent implements OnInit {
 
   onCheckPFEs(){
     this.onSidenavClose();
-    //this.router.navigateByUrl('admin/add-professor');
+    this.router.navigateByUrl('admin/accepted-pfes');
   }
 
   onAddSession(){

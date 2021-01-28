@@ -11,6 +11,7 @@ import { AddStudentComponent } from './components/admin/add-student/add-student.
 import { AddEnseignantComponent } from './components/admin/add-enseignant/add-enseignant.component';
 import { AddAUComponent } from './components/admin/add-au/add-au.component';
 import { PendingSubjectsComponent } from './components/admin/pending-subjects/pending-subjects.component';
+import { PfesListComponent } from './components/admin/pfes-list/pfes-list.component';
 
 
 
@@ -19,11 +20,12 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent,
   children: [
-    {path:'', redirectTo: 'pending-subjects', pathMatch: 'full'},
+    {path:'', redirectTo: 'accepted-pfes', pathMatch: 'full'},
     {path: 'add-student', component: AddStudentComponent},
     {path: 'add-professor', component: AddEnseignantComponent},
     {path: 'add-university-year', component: AddAUComponent},
-    {path: 'pending-subjects', component: PendingSubjectsComponent}
+    {path: 'pending-subjects', component: PendingSubjectsComponent},
+    {path: 'accepted-pfes', component:PfesListComponent}
   ]
 },
   {path: 'professor', component: EnseignantComponent},

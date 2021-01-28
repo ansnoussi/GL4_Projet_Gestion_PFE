@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PFE } from 'apps/pfe/src/app/models/PFE';
 
 @Component({
   selector: 'gl4-pfe-item-admin',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pfe-item-admin.component.css']
 })
 export class PfeItemAdminComponent implements OnInit {
+  @Input() pfe:PFE;
 
   constructor() { }
 
