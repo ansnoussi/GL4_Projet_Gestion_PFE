@@ -41,6 +41,7 @@ import { SearchComponent } from './components/search/search.component';
 import { AddAUComponent } from './components/admin/add-au/add-au.component';
 import { AddEnseignantComponent } from './components/admin/add-enseignant/add-enseignant.component';
 import { AddStudentComponent } from './components/admin/add-student/add-student.component';
+import { AdminSidenavComponent } from './components/admin/navigation/admin-sidenav/admin-sidenav.component';
 
 
 
@@ -57,7 +58,7 @@ import { AddStudentComponent } from './components/admin/add-student/add-student.
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent],
+    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
