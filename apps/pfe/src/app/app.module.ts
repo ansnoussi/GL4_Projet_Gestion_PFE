@@ -46,6 +46,10 @@ import { AddSessionComponent } from './components/admin/add-session/add-session.
 import { PendingSubjectsComponent } from './components/admin/pending-subjects/pending-subjects.component';
 import { ItemPendingSubjectComponent } from './components/admin/pending-subjects/item-pending-subject/item-pending-subject.component';
 import { ReasonComponent } from './components/admin/pending-subjects/reason/reason.component';
+import { PfesListComponent } from './components/admin/pfes-list/pfes-list.component';
+import { PfeItemAdminComponent } from './components/admin/pfes-list/pfe-item-admin/pfe-item-admin.component';
+import { SessionsListComponent } from './components/admin/sessions-list/sessions-list.component';
+import { SessionItemComponent } from './components/admin/sessions-list/session-item/session-item.component';
 
 
 
@@ -62,7 +66,7 @@ import { ReasonComponent } from './components/admin/pending-subjects/reason/reas
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent, ReasonComponent],
+    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent, ReasonComponent, PfesListComponent, PfeItemAdminComponent, SessionsListComponent, SessionItemComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,
