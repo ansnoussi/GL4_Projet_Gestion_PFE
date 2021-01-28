@@ -24,17 +24,18 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   onAddUniversityYear(){
-    this.openDialog(AddAUComponent);
+    this.onSidenavClose();
+    this.openDialog(AddAUComponent, '40%');
   }
 
   onAddStudent(){
-    this.router.navigateByUrl('admin/add-student');
     this.onSidenavClose();
+    this.router.navigateByUrl('admin/add-student');
   }
 
   onAddProfessor(){
-    this.router.navigateByUrl('admin/add-professor');
     this.onSidenavClose();
+    this.router.navigateByUrl('admin/add-professor');
   }
 
   onCheckPendingSubjects(){
@@ -43,24 +44,21 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   onCheckPFEs(){
-    //this.router.navigateByUrl('admin/add-professor');
     this.onSidenavClose();
+    //this.router.navigateByUrl('admin/add-professor');
   }
 
   onAddSession(){
-    this.openDialog(AddSessionComponent)
     this.onSidenavClose();
+    this.openDialog(AddSessionComponent, '70%')
   }
 
-  openDialog(component) {
-
-    this.sidenavClose.emit();
-
+  openDialog(component, height) {
     let config = new MatDialogConfig();
     config = {
       maxWidth: '100vw',
       maxHeight: '100vh',
-      height: '60%',
+      height: height,
       width: '50%',
     };
     const dialogRef = this.dialog.open(component,config);

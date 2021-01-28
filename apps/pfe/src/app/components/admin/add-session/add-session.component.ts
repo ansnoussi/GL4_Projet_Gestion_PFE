@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Session } from '../../../models/Session';
+import { Speciality } from '../../../models/Speciality';
 
 @Component({
   selector: 'gl4-add-session',
@@ -8,8 +9,32 @@ import { Session } from '../../../models/Session';
 })
 export class AddSessionComponent implements OnInit {
 
-  specialities: any = ['Génie logiciel', 'Informatique Industrielle et Automatique', 'Instrumentation et Maintenance Industrielle', 'Réseaux Informatiques et Télécommunications', 'Chimie Industrielle', 'Biologie Industrielle'];
-
+  specialities: Speciality[] = [
+    {
+    ID: 'GL',
+    name: 'Génie Logiciel'
+    },
+    {
+      ID: 'IIA',
+      name: 'Informatique Industrielle et Automatique'
+    },
+    {
+      ID: 'IMI',
+      name: 'Instrumentation et Maintenance Industrielle'
+    },
+    {
+      ID: 'RT',
+      name: 'Réseaux Informatiques et Télécommunications'
+    },
+    {
+      ID: 'CH',
+      name: 'Chimie Industrielle'
+    },
+    {
+      ID: 'BIO',
+      name: 'Biologie Industrielle'
+    },
+  ]
   professors = [{
     lastname: 'SELLAOUTI',
     firstname: 'Aymen',
@@ -24,8 +49,8 @@ export class AddSessionComponent implements OnInit {
     nationality: 'Tunisienne',
     passport: null,
   }, {
-    lastname: 'SELLAOUTI',
-    firstname: 'Aymen',
+    lastname: 'SFAXI',
+    firstname: 'Lilia',
     postalCode: 'XX458CB',
     phone: "98554778",
     email: 'mail@startup.tn',
@@ -37,8 +62,8 @@ export class AddSessionComponent implements OnInit {
     nationality: 'Tunisienne',
     passport: null,
   }, {
-    lastname: 'SELLAOUTI',
-    firstname: 'Aymen',
+    lastname: 'JEMAI',
+    firstname: 'Abderazek',
     postalCode: 'XX458CB',
     phone: "98554778",
     email: 'mail@startup.tn',
@@ -56,6 +81,10 @@ export class AddSessionComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }
