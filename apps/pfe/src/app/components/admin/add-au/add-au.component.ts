@@ -8,7 +8,7 @@ import { AdminService } from '../../../services/admin/admin.service';
 })
 export class AddAUComponent implements OnInit {
 
-  universityYearAdded:string='';
+  universityYearAdded='';
 
   constructor(private adminService:AdminService) { }
 

@@ -9,6 +9,7 @@ import { UploaderRapportPFEComponent } from './components/student/uploader-rappo
 import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
 import { AddStudentComponent } from './components/admin/add-student/add-student.component';
 import { AddEnseignantComponent } from './components/admin/add-enseignant/add-enseignant.component';
+import { AddAUComponent } from './components/admin/add-au/add-au.component';
 
 
 
@@ -17,10 +18,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'admin', component: AdminComponent,
   children: [
-    {path:'', redirectTo:'add-student', pathMatch:'full'},
-    {path: 'add-student', component:AddStudentComponent},
-    {path: 'add-professor', component:AddEnseignantComponent}
-   
+    {path:'', redirectTo: 'add-student', pathMatch: 'full'},
+    {path: 'add-student', component: AddStudentComponent},
+    {path: 'add-professor', component: AddEnseignantComponent},
+    {path: 'add-university-year', component: AddAUComponent}
+
   ]
 },
   {path: 'professor', component: EnseignantComponent},
