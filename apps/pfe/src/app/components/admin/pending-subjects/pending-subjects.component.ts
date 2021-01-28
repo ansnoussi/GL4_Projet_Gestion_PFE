@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subject } from '../../../models/Subject';
 import { SubjectService } from '../../../services/subject/subject.service';
+import { MatDialogConfig } from '@angular/material/dialog';
 
 @Component({
   selector: 'gl4-pending-subjects',
@@ -10,6 +11,7 @@ import { SubjectService } from '../../../services/subject/subject.service';
 export class PendingSubjectsComponent implements OnInit {
 
   pendingSubjects:Subject[]=[];
+
 
   constructor(private subjectService:SubjectService) {
     this.pendingSubjects=this.subjectService.getPendingSubjects();

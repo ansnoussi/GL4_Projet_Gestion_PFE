@@ -2,7 +2,7 @@
 
     <mat-card-content>
         <mat-tab-group mat-align-tabs="center">
-    
+
             <mat-tab label="Sujet">
                 <div class="head">
                     <div class="col-8 left">
@@ -12,7 +12,7 @@
                        {{subject.startDate}} - {{subject.endDate}}
                     </div>
                 </div>
-    
+
                 <div class="head">
                     <div class="col-7 left">
                         <h4>Travail demandé:</h4>
@@ -27,20 +27,20 @@
                         </ul>
                     </div>
                 </div>
-    
-    
-    
-    
+
+
+
+
             </mat-tab>
-    
+
             <mat-tab label="Entreprise">
                 <div class="head">
                     <div class="col-10">
-    
+
                         <div class="head">
                             <div class="col-6 left">
                                 <h3>{{subject.enterprise.name}}</h3>
-    
+
                                 Contact
                                 <ul>
                                     <li>Email: {{subject.enterprise.email}}</li>
@@ -51,14 +51,14 @@
                                 {{subject.enterprise.description}}
                             </div>
                         </div>
-    
-    
-    
+
+
+
                     </div>
-    
+
                 </div>
             </mat-tab>
-    
+
             <mat-tab label="Encadrement">
                 <div class="head">
                     <div class="col-4 left">
@@ -68,9 +68,9 @@
                             <li>Spécialité: {{subject.student.speciality}}</li>
                             <li>Mail: {{subject.student.email}}</li>
                         </ul>
-    
+
                     </div>
-        
+
                     <div class="col-4 left">
                         <h3>Encadrants</h3>
                         <ul>
@@ -80,18 +80,17 @@
                     </div>
                 </div>
             </mat-tab>
-    
+
         </mat-tab-group>
     </mat-card-content>
 
     <mat-card-actions>
         <div class="button-row">
-                <button mat-button class="btn-danger top-right" (click)="refuseSubject()">Refuser</button>
+                <button mat-button class="btn-danger top-right" (click)="onRefuse()">Refuser</button>
                 <button mat-button class="btn-success top-right" (click)="acceptSubject()">Accepter</button>
         </div>
     </mat-card-actions>
 
     </mat-card>
-    
-    
-    
+
+

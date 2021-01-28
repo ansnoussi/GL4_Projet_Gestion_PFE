@@ -25,7 +25,7 @@ export class AdminSidenavComponent implements OnInit {
 
   onAddUniversityYear(){
     this.onSidenavClose();
-    this.openDialog(AddAUComponent, '40%');
+    this.openDialog(AddAUComponent, '50%');
   }
 
   onAddStudent(){
@@ -50,7 +50,7 @@ export class AdminSidenavComponent implements OnInit {
 
   onAddSession(){
     this.onSidenavClose();
-    this.openDialog(AddSessionComponent, '70%')
+    this.openDialog(AddSessionComponent, '80%')
   }
 
   openDialog(component, height) {

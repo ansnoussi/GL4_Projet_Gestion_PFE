@@ -9,7 +9,13 @@ export class ReasonComponent implements OnInit {
 
   constructor() { }
 
+  reason = '';
+
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+
   }
 
 }
