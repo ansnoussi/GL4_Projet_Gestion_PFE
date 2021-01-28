@@ -50,8 +50,9 @@ export class ListPfeComponent implements OnInit {
           date: "07/10/2021",
           room: '2B6-1',
           sessionID: 1,
+          speciality: 'Génie Logiciel'
         },
-        presentationTime : '8:30'
+        presentationTime : '8:30',
       })
     })
   }

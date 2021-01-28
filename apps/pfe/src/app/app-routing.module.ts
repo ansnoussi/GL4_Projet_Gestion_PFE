@@ -24,7 +24,6 @@ const routes: Routes = [
     {path: 'add-professor', component: AddEnseignantComponent},
     {path: 'add-university-year', component: AddAUComponent},
     {path: 'pending-subjects', component: PendingSubjectsComponent}
-
   ]
 },
   {path: 'professor', component: EnseignantComponent},

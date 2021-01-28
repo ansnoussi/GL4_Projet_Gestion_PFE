@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UploaderRapportPFEComponent } from '../../../student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 import { AddAUComponent } from '../../add-au/add-au.component';
+import { AddSessionComponent } from '../../add-session/add-session.component';
 
 @Component({
   selector: 'gl4-admin-sidenav',
@@ -23,7 +24,7 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   onAddUniversityYear(){
-    this.openDialog();
+    this.openDialog(AddAUComponent);
   }
 
   onAddStudent(){
@@ -47,11 +48,11 @@ export class AdminSidenavComponent implements OnInit {
   }
 
   onAddSession(){
-    //this.router.navigateByUrl('admin/add-professor');
+    this.openDialog(AddSessionComponent)
     this.onSidenavClose();
   }
 
-  openDialog() {
+  openDialog(component) {
 
     this.sidenavClose.emit();
 
@@ -62,7 +63,7 @@ export class AdminSidenavComponent implements OnInit {
       height: '60%',
       width: '50%',
     };
-    const dialogRef = this.dialog.open(AddAUComponent,config);
+    const dialogRef = this.dialog.open(component,config);
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
