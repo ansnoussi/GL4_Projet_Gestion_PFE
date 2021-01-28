@@ -1,7 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { AddAUComponent } from '../../admin/add-au/add-au.component';
 import { UploaderRapportPFEComponent } from '../../student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 
 @Component({
