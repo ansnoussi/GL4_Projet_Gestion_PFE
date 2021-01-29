@@ -22,7 +22,7 @@ export class ItemPendingSubjectComponent implements OnInit {
   }
 
   acceptSubject(){
-    this.subjectService.acceptSubject(this.subject);
+    this.subjectService.addAcceptedSubject(this.subject);
   }
 
   refuseSubject(){

@@ -8,11 +8,13 @@ import { SubjectService } from '../../../services/subject/subject.service';
   styleUrls: ['./pfes-list.component.css']
 })
 export class PfesListComponent implements OnInit {
-  pfeList:PFE[]=[];
+  pfeList: PFE[];
 
   constructor(private subjectService:SubjectService) {
-    const subjects = this.subjectService.getAllSubjects();
-    subjects.forEach(subject => {
+    const subjectsAdmin = this.subjectService.getAcceptedSubjects();
+    console.log("subject admin");
+    console.log(subjectsAdmin);
+    subjectsAdmin.forEach(subject => {
       this.pfeList.push({
         subject: subject,
         examiner: {

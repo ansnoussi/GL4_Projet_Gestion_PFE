@@ -9,7 +9,7 @@ import { SubjectService } from '../../services/subject/subject.service';
 export class AdminComponent implements OnInit {
 
   constructor(private subjectService:SubjectService) {
-    this.subjectService.addSubject({
+    this.subjectService.addAcceptedSubject({
       title: 'Application OMS',
       objective: 'Conception et réalisation d’une application permettant la gestion des ordres d’achat, du planning des ventes et de génération de bordereaux de facturation.',
       startDate: '01/02/2021',
@@ -67,11 +67,11 @@ export class AdminComponent implements OnInit {
       }
 
     })
-    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
-    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
-    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
-    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
-    this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);
+    this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);
+    this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);
+    this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);
+    this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);
+    this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);
    }
 
   ngOnInit(): void {

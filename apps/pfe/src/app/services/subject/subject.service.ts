@@ -5,6 +5,23 @@ import { Subject } from '../../models/Subject';
   providedIn: 'root'
 })
 export class SubjectService {
+
+  subjects:Subject[]=[];
+  acceptedSubjects:Subject[]=[];
+  pendingSubjects:Subject[]=[];
+
+
+  getAcceptedSubjects() {
+    return(this.acceptedSubjects);
+  }
+
+  addAcceptedSubject(subject:Subject){
+
+    console.log(subject);
+    this.acceptedSubjects.push(subject);
+    this.pendingSubjects.splice(this.pendingSubjects.indexOf(subject),1);
+    console.log(this.acceptedSubjects);
+  }
   
   refuseSubject(subject: Subject) {
     this.pendingSubjects.splice(this.pendingSubjects.indexOf(subject),1);
@@ -18,8 +35,7 @@ export class SubjectService {
     console.log(this.pendingSubjects);
   }
 
-  subjects:Subject[]=[];
-  pendingSubjects:Subject[]=[];
+  
 
 
   getAllSubjects(){

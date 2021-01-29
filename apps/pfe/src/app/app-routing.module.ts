@@ -25,7 +25,7 @@ const routes: Routes = [
     {path: 'add-professor', component: AddEnseignantComponent},
     {path: 'add-university-year', component: AddAUComponent},
     {path: 'pending-subjects', component: PendingSubjectsComponent},
-    {path: 'accepted-pfes', component:PfesListComponent}
+    {path: 'pfes', component: PfesListComponent}
   ]
 },
   {path: 'professor', component: EnseignantComponent},
