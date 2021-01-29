@@ -5,7 +5,5 @@ import { IEtudiant } from './interfaces/etudiant.interface';
 
 @Injectable()
 export class EtudiantService {
-  constructor(@InjectModel('Etudiant') private edudiantModel: Model<IEtudiant>
-  ) { }
-
+  constructor(@InjectModel('Etudiant') private edudiantModel: Model<IEtudiant>) { }
 }
