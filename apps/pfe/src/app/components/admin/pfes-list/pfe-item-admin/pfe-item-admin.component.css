@@ -15,8 +15,8 @@ h3{
 }
 
 .btn{
-  margin-left: 88.4% !important;
-  margin-bottom: 10px !important;
+  margin-left: 10.4% !important;
+  
 }
 
 
@@ -39,6 +39,12 @@ h3{
   text-align: center;
 }
 
+
+.top-right{
+  left: 170%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 
 
 

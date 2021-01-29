@@ -31,6 +31,9 @@ export class PfesListComponent implements OnInit {
           nationality: 'Tunisienne',
           passport: null,
         },
+
+        session:null,
+        /*
         session: {
           juryPresident: {
             lastname: 'BEN FOULEN',
@@ -51,6 +54,7 @@ export class PfesListComponent implements OnInit {
           sessionID: 1,
           speciality: 'Génie Logiciel'
         },
+        */
         presentationTime : '8:30',
       })
     })

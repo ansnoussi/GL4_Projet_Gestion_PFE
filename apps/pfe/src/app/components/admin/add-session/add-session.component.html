@@ -12,6 +12,10 @@
   <h2 class="center-text">Ajouter Session</h2>
   <mat-card-content align="center">
 
+    <mat-form-field>
+      <input class="center-text" [(ngModel)]="session.sessionID" name="sessionID" type="number" matInput placeholder="Numéro" required>
+    </mat-form-field>
+
     <mat-form-field align="center">
       <mat-label>Spécialité</mat-label>
       <mat-select [(ngModel)]="session.speciality" name="speciality">
@@ -38,4 +42,10 @@
 
   </mat-card-content>
 </form>
-<button mat-stroked-button color="primary" class="btn-block center" [disabled]="addUniversityYearForm.invalid" (click)="onAddSession()">Ajouter</button>
+<button 
+mat-stroked-button 
+mat-dialog-close
+color="primary" 
+class="btn-block center" 
+[disabled]="addUniversityYearForm.invalid" 
+(click)="onAddSession()">Ajouter</button>

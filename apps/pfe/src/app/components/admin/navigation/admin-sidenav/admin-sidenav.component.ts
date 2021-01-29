@@ -50,7 +50,7 @@ export class AdminSidenavComponent implements OnInit {
 
   onAddSession(){
     this.onSidenavClose();
-    this.openDialog(AddSessionComponent, '80%')
+    this.openDialog(AddSessionComponent, '90%')
   }
 
   openDialog(component, height) {

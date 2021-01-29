@@ -69,15 +69,15 @@
               <li>Spécialité: {{pfe.subject.student.speciality}}</li>
               <li>Mail: {{pfe.subject.student.email}}</li>
             </ul>
-            <h3>Encadrants</h3>
-            <ul>
+            <h3 *ngIf="pfe.session">Encadrants</h3>
+            <ul *ngIf="pfe.session">
               <li>Societé: {{pfe.subject.enterpriseSupervisor.lastname}} {{pfe.subject.enterpriseSupervisor.firstname}}</li>
               <li>Facculté: {{pfe.subject.universitySupervisor.lastname + " " + pfe.subject.universitySupervisor.firstname}}</li>
             </ul>
           </div>
 
 
-          <div class="col-4 left">
+          <div class="col-4 left" *ngIf="pfe.session">
             <h3>President du jury</h3>
             <ul>
               <li>{{pfe.session.juryPresident.lastname + " " + pfe.session.juryPresident.firstname}}</li>
@@ -88,14 +88,28 @@
             </ul>
           </div>
 
+          <div class="col-4 left" *ngIf="!pfe.session">
+            <h3>Encadrants</h3>
+            <ul>
+              <li>Societé: {{pfe.subject.enterpriseSupervisor.lastname}} {{pfe.subject.enterpriseSupervisor.firstname}}</li>
+              <li>Facculté: {{pfe.subject.universitySupervisor.lastname + " " + pfe.subject.universitySupervisor.firstname}}</li>
+            </ul>
+          </div>
+
           <div>
             <h3>Session</h3>
-            <ul>
+            <ul *ngIf="pfe.session">
               <li>Numéro: {{pfe.session.sessionID}}</li>
               <li>Salle : {{pfe.session.room}}</li>
               <li>Date : {{pfe.session.date}}</li>
               <li>Heure : {{pfe.presentationTime}}</li>
             </ul>
+            <button 
+            *ngIf="! pfe.session"
+            mat-stroked-button
+            color="primary" 
+            class="btn-block btn" 
+            (click)="accederSession()">Accéder une session</button>
           </div>
 
         </div>
