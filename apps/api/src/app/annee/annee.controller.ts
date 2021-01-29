@@ -10,7 +10,7 @@ export class AnneeController {
     constructor(private anneeService: AnneeService) {}
 
     @Get()
-    @UseGuards(AuthGuard('jwt'))
+    // @UseGuards(AuthGuard('jwt'))
     async getCurrentYear(@Res() response) {
         this.anneeService.getCurrent()
         .then((year) => {
@@ -25,12 +25,12 @@ export class AnneeController {
     }
 
     @Post()
-    @UseGuards(AuthGuard('jwt'))
+    // @UseGuards(AuthGuard('jwt'))
     async login(@Body() newYearDto: newYearDto, @Res() response) {
 
         this.anneeService.getCurrent()
         .then((year) => {
-            if(year.year > newYearDto.year) {
+            if(year && year.year > newYearDto.year) {
                 response.status(400).json({message: "La nouvelle année devrait être plus grande que l'actuelle'"})
             }else {
                 return this.anneeService.advanceYear(newYearDto.year)
@@ -40,7 +40,7 @@ export class AnneeController {
         })
         .catch(e => {
             response.status(500).json({
-                message: "Impossible de récupérer l'année'",
+                message: "Impossible d'ajouter l'année'",
                 e,
             });
         })
