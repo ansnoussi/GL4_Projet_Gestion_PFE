@@ -50,6 +50,7 @@ import { PfesListComponent } from './components/admin/pfes-list/pfes-list.compon
 import { PfeItemAdminComponent } from './components/admin/pfes-list/pfe-item-admin/pfe-item-admin.component';
 import { SessionsListComponent } from './components/admin/sessions-list/sessions-list.component';
 import { SessionItemComponent } from './components/admin/sessions-list/session-item/session-item.component';
+import { ImportDataFromFileComponent } from './components/admin/import-data-from-file/import-data-from-file.component';
 
 
 
@@ -66,7 +67,7 @@ import { SessionItemComponent } from './components/admin/sessions-list/session-i
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent, ReasonComponent, PfesListComponent, PfeItemAdminComponent, SessionsListComponent, SessionItemComponent],
+    ListPfeComponent, SearchComponent, AddAUComponent, AddEnseignantComponent, AddStudentComponent, AdminSidenavComponent, AddSessionComponent, PendingSubjectsComponent, ItemPendingSubjectComponent, ReasonComponent, PfesListComponent, PfeItemAdminComponent, SessionsListComponent, SessionItemComponent, ImportDataFromFileComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,

@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Session } from '../../../models/Session';
 import { SessionService } from '../../../services/session/session.service';
 import { Speciality } from '../../../models/Speciality';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { UploadedFile } from '@nestjs/common';
 
 @Component({
   selector: 'gl4-add-session',
@@ -9,6 +12,8 @@ import { Speciality } from '../../../models/Speciality';
   styleUrls: ['./add-session.component.css']
 })
 export class AddSessionComponent implements OnInit {
+
+  @Output() sidenavClose = new EventEmitter();
 
   specialities: Speciality[] = [
     {

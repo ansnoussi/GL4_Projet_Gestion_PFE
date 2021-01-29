@@ -49,9 +49,9 @@
     "@nestjs/passport": "^7.1.5",
     "@nestjs/platform-express": "^7.0.0",
     "@nrwl/angular": "10.4.4",
-    "bootstrap": "^4.5.3",
     "bcrypt": "^5.0.0",
     "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.5.3",
     "crypter": "^0.2.2",
     "mongoose": "^5.11.4",
     "passport": "^0.4.1",
@@ -60,6 +60,7 @@
     "reflect-metadata": "^0.1.13",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
+    "xlsx": "^0.16.9",
     "zone.js": "^0.10.2"
   },
   "devDependencies": {

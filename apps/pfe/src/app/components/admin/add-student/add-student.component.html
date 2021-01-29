@@ -1,71 +1,67 @@
 <mat-card class="box">
-    <form #addStudentForm="ngForm">
+  <form #addStudentForm="ngForm">
 
-      <mat-card-header>
-        <mat-card-title>Ajouter etudiant</mat-card-title>
-      </mat-card-header>
+    <h2 class="center-text">Ajouter Etudiant</h2>
+    <mat-card-content>
+      <mat-form-field>
+        <input [(ngModel)]="student.lastname" name="lastname" type="text" matInput placeholder="Nom" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.firstname" name="firstname" type="text" matInput placeholder="Prénom" required>
+      </mat-form-field>
 
-      <mat-card-content>
-        <mat-form-field>
-            <input [(ngModel)]="student.lastname" name="lastname" type="text" matInput placeholder="Nom" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input [(ngModel)]="student.firstname" name="firstname" type="text" matInput placeholder="Prénom" required>
-          </mat-form-field>
-  
-          <mat-form-field>
-            <mat-label>Spécialité</mat-label>
-            <mat-select [(ngModel)]="student.speciality" name="speciality">
-              <mat-option [value]="speciality" *ngFor="let speciality of specialities">{{speciality}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field>
+        <mat-label>Spécialité</mat-label>
+        <mat-select [(ngModel)]="student.speciality" name="speciality">
+          <mat-option [value]="speciality" *ngFor="let speciality of specialities">{{speciality}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Niveau</mat-label>
-            <mat-select [(ngModel)]="student.studyLevel" name="studyLevel">
-              <mat-option [value]="studyLevel" *ngFor="let studyLevel of studyLevels">{{studyLevel}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
+      <mat-form-field>
+        <mat-label>Niveau</mat-label>
+        <mat-select [(ngModel)]="student.studyLevel" name="studyLevel">
+          <mat-option [value]="studyLevel" *ngFor="let studyLevel of studyLevels">{{studyLevel}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
 
 
-          <mat-form-field>
-            <input [(ngModel)]="student.nationality" name="nationality" type="text" matInput placeholder="Nationnalité" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input [(ngModel)]="student.address" name="address" type="text" matInput placeholder="Adresse" required>
-          </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.nationality" name="nationality" type="text" matInput placeholder="Nationnalité" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.address" name="address" type="text" matInput placeholder="Adresse" required>
+      </mat-form-field>
 
-          <mat-form-field>
-            <input [(ngModel)]="student.city" name="city" type="text" matInput placeholder="Cité" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input [(ngModel)]="student.postalCode" name="postalCode" type="number" matInput placeholder="Code postal" required>
-          </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.city" name="city" type="text" matInput placeholder="Cité" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.postalCode" name="postalCode" type="number" matInput placeholder="Code postal" required>
+      </mat-form-field>
 
-          <mat-form-field>
-            <input [(ngModel)]="student.phone" name="phone" type="number" matInput placeholder="Téléphone" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input [(ngModel)]="student.email" name="email" type="email" matInput placeholder="Email" required>
-          </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.phone" name="phone" type="number" matInput placeholder="Téléphone" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.email" name="email" type="email" matInput placeholder="Email" required>
+      </mat-form-field>
 
-          <mat-form-field>
-            <input [(ngModel)]="student.nationalIdentityCard" name="nationalIdentityCard" type="number" matInput placeholder="CIN" required>
-          </mat-form-field>
-          <mat-form-field>
-            <input [(ngModel)]="student.passport" name="passport" type="number" matInput placeholder="Passeport">
-          </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.nationalIdentityCard" name="nationalIdentityCard" type="number" matInput placeholder="CIN" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input [(ngModel)]="student.passport" name="passport" type="number" matInput placeholder="Passeport">
+      </mat-form-field>
+
+    </mat-card-content>
 
 
+  </form>
+  <button mat-stroked-button color="primary" class="btn-block" [disabled]="addStudentForm.invalid" (click)="addStudent()">Ajouter</button>
 
-        </mat-card-content>
-  
-  
-              
-      </form>
-      <button mat-stroked-button color="primary" class="btn-block" [disabled]="addStudentForm.invalid" (click)="addStudent()">Ajouter</button>
-  
-    </mat-card>
-  
+  <button mat-stroked-button color="primary" class="btn-block import-button" (click)="onImport()">Importer depuis un fichier</button>
+
+
+</mat-card>

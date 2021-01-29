@@ -17,7 +17,7 @@ export class UploaderRapportPFEComponent implements OnInit {
   @Input() target = 'https://file.io';
   /** File extension that accepted, same as 'accept' of <input type="file" />.
    By the default, it's set to 'image/*'. */
-  @Input() accept = '*';
+  @Input() accept = '.pdf';
   /** Allow you to add handler after its completion. Bubble up response text from remote. */
   @Output() complete = new EventEmitter<string>();
 
