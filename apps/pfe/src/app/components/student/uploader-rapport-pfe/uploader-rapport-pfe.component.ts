@@ -90,6 +90,10 @@ export class UploaderRapportPFEComponent implements OnInit {
     this.file = null;
   }
 
+  onSubmit(){
+    // Send the file
+  }
+
 
 }
 

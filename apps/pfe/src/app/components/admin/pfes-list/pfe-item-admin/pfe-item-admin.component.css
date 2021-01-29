@@ -1,62 +1,62 @@
 mat-card {
-    margin-bottom: 20px;
-    margin-top: 20px;
-    font-family: Arial, sans-serif;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
 }
 .card-pfe{
-    min-height: 300px;
-    
+  min-height: 300px;
+
 }
 li{
-    list-style: circle;
+  list-style: circle;
 }
 h3{
-    color: black;
+  color: black;
 }
 
 .btn{
-    margin-left: 88.4% !important;
-    margin-bottom: 10px !important;
+  margin-left: 88.4% !important;
+  margin-bottom: 10px !important;
 }
 
 
 .head{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
 .right {
-    text-align: right;
+  text-align: right;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
-    
+
 
 
 @media (max-width: 800px) {
-    .left {
-        text-align: left;
-    }
-    .btn{
-        margin-left: 70% !important;
-        margin-bottom: 10px !important;
-    }
-    .right {
-        text-align: left;
-    }
-    .center {
-        text-align: left;
-    }
-    .head {
-        flex-direction: column;
-      }
+  .left {
+    text-align: left;
+  }
+  .btn{
+    margin-left: 70% !important;
+    margin-bottom: 10px !important;
+  }
+  .right {
+    text-align: left;
+  }
+  .center {
+    text-align: left;
+  }
+  .head {
+    flex-direction: column;
+  }
 }
-  

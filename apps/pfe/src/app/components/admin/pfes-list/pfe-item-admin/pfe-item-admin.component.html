@@ -1,97 +1,106 @@
 <mat-card class="card-pfe">
 
-    <mat-card-content>
-        <mat-tab-group mat-align-tabs="center">
-    
-            <mat-tab label="Sujet">
-                <div class="head">
-                    <div class="col-8 left">
-                        <h3>{{pfe.subject.title}}</h3>
-                    </div>
-                    <div class="col-3 left">
-                       {{pfe.subject.startDate}} - {{pfe.subject.endDate}}
-                    </div>
-                </div>
-    
-                <div class="head">
-                    <div class="col-7 left">
-                        <h4>Travail demandé:</h4>
-                    {{pfe.subject.objective}}
-                    </div>
-                    <div class="col-2 left">
-                        <h4>Outils</h4>
-                        <ul>
-                            <li>Angular</li>
-                            <li>Material UI</li>
-                            <li>MongoDB</li>
-                        </ul>
-                    </div>
-                </div>
-    
-    
-    
-    
-            </mat-tab>
-    
-            <mat-tab label="Entreprise">
-                <div class="head">
-                    <div class="col-10">
-    
-                        <div class="head">
-                            <div class="col-6 left">
-                                <h3>{{pfe.subject.enterprise.name}}</h3>
-    
-                                Contact
-                                <ul>
-                                    <li>Email: {{pfe.subject.enterprise.email}}</li>
-                                    <li>Numéro: {{pfe.subject.enterprise.phone}}</li>
-                                </ul>
-                            </div>
-                            <div class="col-4 left">
-                                {{pfe.subject.enterprise.description}}
-                            </div>
-                        </div>
-    
-    
-    
-                    </div>
-    
-                </div>
-            </mat-tab>
-    
-            <mat-tab label="Soutenance">
-                <div class="head">
-                    <div class="col-4 left">
-                        <h3>Etudiant</h3>
-                        <ul>
-                            <li>{{pfe.subject.student.lastname + " " + pfe.subject.student.firstname}}</li>
-                            <li>Spécialité: {{pfe.subject.student.speciality}}</li>
-                            <li>Mail: {{pfe.subject.student.email}}</li>
-                        </ul>
-    
-                    </div>
-                    <div class="col-4 left">
-                        <h3>President du jury</h3>
-                        <ul>
-                            <li>{{pfe.session.juryPresident.lastname + " " + pfe.session.juryPresident.firstname}}</li>
-                        </ul>
-                        <h3>Examinateur</h3>
-                        <ul>
-                            <li>{{pfe.examiner.lastname + " " + pfe.examiner.firstname}}</li>
-                        </ul>
-                    </div>
-                    <div class="col-4 left">
-                        <h3>Session</h3>{{pfe.session.sessionID}}
-                        <h3>Salle</h3>{{pfe.session.room}}
-                        <h3>Encadrants</h3>
-                        <ul>
-                            <li>Societé: {{pfe.subject.enterpriseSupervisor.lastname}} {{pfe.subject.enterpriseSupervisor.firstname}}</li>
-                            <li>Facculté: {{pfe.subject.universitySupervisor.lastname + " " + pfe.subject.universitySupervisor.firstname}}</li>
-                        </ul>
-                    </div>
-                </div>
-            </mat-tab>
-    
-        </mat-tab-group>
-    </mat-card-content>
-    </mat-card>
+  <mat-card-content>
+    <mat-tab-group mat-align-tabs="center">
+
+      <mat-tab label="Sujet">
+        <div class="head">
+          <div class="col-8 left">
+            <h3>{{pfe.subject.title}}</h3>
+          </div>
+          <div class="col-3 left">
+            {{pfe.subject.startDate}} - {{pfe.subject.endDate}}
+          </div>
+        </div>
+
+        <div class="head">
+          <div class="col-7 left">
+            <h4>Travail demandé:</h4>
+            {{pfe.subject.objective}}
+          </div>
+          <div class="col-2 left">
+            <h4>Outils</h4>
+            <ul>
+              <li>Angular</li>
+              <li>Material UI</li>
+              <li>MongoDB</li>
+            </ul>
+          </div>
+        </div>
+
+
+
+
+      </mat-tab>
+
+      <mat-tab label="Entreprise">
+        <div class="head">
+          <div class="col-10">
+
+            <div class="head">
+              <div class="col-6 left">
+                <h3>{{pfe.subject.enterprise.name}}</h3>
+
+                Contact
+                <ul>
+                  <li>Email: {{pfe.subject.enterprise.email}}</li>
+                  <li>Numéro: {{pfe.subject.enterprise.phone}}</li>
+                </ul>
+              </div>
+              <div class="col-4 left">
+                {{pfe.subject.enterprise.description}}
+              </div>
+            </div>
+
+
+
+          </div>
+
+        </div>
+      </mat-tab>
+
+      <mat-tab label="Soutenance">
+        <div class="head">
+
+          <div class="col-4 left">
+            <h3>Etudiant</h3>
+            <ul>
+              <li>{{pfe.subject.student.lastname + " " + pfe.subject.student.firstname}}</li>
+              <li>Spécialité: {{pfe.subject.student.speciality}}</li>
+              <li>Mail: {{pfe.subject.student.email}}</li>
+            </ul>
+            <h3>Encadrants</h3>
+            <ul>
+              <li>Societé: {{pfe.subject.enterpriseSupervisor.lastname}} {{pfe.subject.enterpriseSupervisor.firstname}}</li>
+              <li>Facculté: {{pfe.subject.universitySupervisor.lastname + " " + pfe.subject.universitySupervisor.firstname}}</li>
+            </ul>
+          </div>
+
+
+          <div class="col-4 left">
+            <h3>President du jury</h3>
+            <ul>
+              <li>{{pfe.session.juryPresident.lastname + " " + pfe.session.juryPresident.firstname}}</li>
+            </ul>
+            <h3>Examinateur</h3>
+            <ul>
+              <li>{{pfe.examiner.lastname + " " + pfe.examiner.firstname}}</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Session</h3>
+            <ul>
+              <li>Numéro: {{pfe.session.sessionID}}</li>
+              <li>Salle : {{pfe.session.room}}</li>
+              <li>Date : {{pfe.session.date}}</li>
+              <li>Heure : {{pfe.presentationTime}}</li>
+            </ul>
+          </div>
+
+        </div>
+      </mat-tab>
+
+    </mat-tab-group>
+  </mat-card-content>
+</mat-card>
