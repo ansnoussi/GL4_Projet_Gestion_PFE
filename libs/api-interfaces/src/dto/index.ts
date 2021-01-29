@@ -1,5 +1,6 @@
 export { Role, CreateUserDto, LoginUserDto } from "./user"
 export { newYearDto } from "./annee"
+export { newSalleDto } from "./salle"
 
 
 
