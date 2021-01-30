@@ -43,6 +43,12 @@ Run `ng serve api` to start the Nest server locally on http://localhost:3333/api
 
 ⚠ *Important* : so that we don't run into any CORS issues while developing, a proxy configuration is set to proxy requests to http://localhost:4200/api to the NestJS server.
 
+⚠ *Important* : a mongodb instance is needed, you can have one easily wih docker :
+
+```
+docker run --name projet-gl4-mongo -p 27017:27017 -d mongo:latest
+```
+
 ## Run the whole stack
 Run `npm run dev` to start the Nest app and the Angular app concurrently.
 
