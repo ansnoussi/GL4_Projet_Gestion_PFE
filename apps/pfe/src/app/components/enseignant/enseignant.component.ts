@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from '../../models/Subject';
+import { EnseignantService } from '../../services/enseigant/enseignant.service';
+import { SubjectService } from '../../services/subject/subject.service';
 
 @Component({
   selector: 'gl4-enseignant',
@@ -8,24 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class EnseignantComponent implements OnInit {
 
 
-  listEnc:any=[
-    {titre:'sujet2',etudiant:'etudiant2',description:'description2',date:'01/12/2020'},
-    {titre:'sujet2',etudiant:'etudiant2',description:'description2',date:'01/12/2020'},
-    {titre:'sujet2',etudiant:'etudiant2',description:'description2',date:'01/12/2020'},
-    {titre:'sujet2',etudiant:'etudiant2',description:'description2',date:'01/12/2020'},
-    {titre:'sujet2',etudiant:'etudiant2',description:'description2',date:'01/12/2020'},
-  ];
-
-  listPfe:any=[
-    {titre:'Conception et Réalisation d’une application des gestions des activités d’un conseil de développement',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-    {titre:'sujet1',etudiant:'etudiant',description:'description',date:'01/12/2020'},
-  ];
+  listPfe:Subject[]=[];
+  supervisionList:Subject[]=[];
 
 
-  constructor() { }
+
+  constructor(private subjectService:SubjectService, private enseignantService:EnseignantService) {
+    this.listPfe=this.subjectService.getAllSubjects();
+    this.supervisionList=this.enseignantService.getSupervisionList();
+   }
 
   ngOnInit(): void {
   }

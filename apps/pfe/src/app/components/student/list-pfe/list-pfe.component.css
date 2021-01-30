@@ -11,3 +11,9 @@ div {
 .info-text{
     text-align: center;
 }
+
+.search-bar{
+  max-width: 300px;
+  margin-left: 40%;
+  margin-bottom: -7px;
+}

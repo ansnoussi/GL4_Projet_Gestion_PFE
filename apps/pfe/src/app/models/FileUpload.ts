@@ -1,6 +1,6 @@
 import { Subscription } from 'rxjs';
 
-export class FileUploadModel {
+export class FileUpload {
   data: File;
   state: string;
   inProgress: boolean;

@@ -5,8 +5,13 @@ mat-sidenav-container, mat-sidenav-content, mat-sidenav {
 
 mat-sidenav {
   width: 250px;
+  background: linear-gradient(to bottom, #6200EE 0%, #33ccff 100%)
 }
 
 main {
   padding: 10px;
+}
+
+mat-sidenav-container{
+  background-color: lightgray;
 }

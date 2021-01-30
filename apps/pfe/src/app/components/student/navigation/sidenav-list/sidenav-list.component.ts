@@ -1,7 +1,7 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { UploaderRapportPFEComponent } from '../../student/uploader-rapport-pfe/uploader-rapport-pfe.component';
+import { UploaderRapportPFEComponent } from '../../uploader-rapport-pfe/uploader-rapport-pfe.component';
 
 @Component({
   selector: 'gl4-sidenav-list',
@@ -33,9 +33,9 @@ export class SidenavListComponent implements OnInit {
   }
 
   openDialog() {
-    
+
     this.sidenavClose.emit();
-  
+
     let config = new MatDialogConfig();
     config = {
       maxWidth: '100vw',

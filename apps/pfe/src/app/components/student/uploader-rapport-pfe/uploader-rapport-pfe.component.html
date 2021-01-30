@@ -34,7 +34,7 @@
     {{file.data.name}}
 </div>
 
-<button *ngIf="uploadComplete" class="done-button center" mat-button color="warn">
+<button *ngIf="uploadComplete" class="done-button center" mat-button color="warn" (click)="onSubmit()">
   <mat-icon>done</mat-icon>
   OK
 </button>

@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Subject } from '../../../models/Subject';
+import { SubjectService } from '../../../services/subject/subject.service';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'gl4-student-add-subject',
@@ -8,73 +10,38 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class StudentAddSubjectComponent implements OnInit {
 
-  constructor() { }
+
+  @ViewChild('addSubjectForm', {static: false}) addSubjectForm: NgForm;
+  @ViewChild('toolChamp', {static: false}) toolChamp: NgModel;
+
+  subject: Subject = new Subject();
+  startDate:Date=new Date();
+  endDate:Date= new Date();
+  tool:String;
+  tools:String[]=[];
+
+
+
+  constructor(private subjectService: SubjectService) { }
 
   ngOnInit(){
   }
 
+  addTool(){
+    this.tools.push(this.tool);
+    this.tool = '';
+  }
 
 
-  specialite: any = ['Biologie Industrielle', 'Chimie Industrielle', 'Informatique Industrielle et Automatique','Instrumentation et Maintenance Industrielle','Réseaux Informatiques et Télécommunications','Génie Logiciel'];
-  niveau:any = ['3ème','4ème','5ème']
-
-
-
-    sujet={
-      'titre':'',
-      'objectif':'',
-      'date_debut':'',
-      'date_fin':''
-    } 
-
-    student = {
-      'specialite':'',
-      'nom':'',
-      'prenom':'',
-      'niveau':'',
-      'numIns':'',
-      'cin':'',
-      'nationnalite':'',
-      'passeport':'',
-      'adresse':'',
-      'codePostal':'',
-      'ville':'',
-      'email':'',
-      'tel':''
-    }
-
-    entreprise = {
-      'responsable':'',
-      'adresse':'',
-      'codePostal':'',
-      'ville':'',
-      'pays':'',
-      'tel':'',
-      'fax':'',
-      'email':'',
-      'website':''
-    }
-
-    encadrantEntreprise = {
-      'nom':'',
-      'prenom':'',
-      'grade':'',
-      'tel':'',
-      'poste':'',
-      'fax':'',
-      'mobile':'',
-      'email':''
-    }
+  addSubject(){
+    console.log(typeof(this.subject.startDate));
+    this.subject.startDate = this.startDate.toLocaleString().split(' ')[0];
+    this.subject.endDate = this.endDate.toLocaleString().split(' ')[0];
+    this.subject.tools=this.tools;
+    this.subjectService.addSubject(this.subject);
+    this.addSubjectForm.resetForm();
+  }
 
 
 
-    ajouterSujet(){
-      console.log("Sujet:", this.sujet);
-      console.log("Studant:", this.student);
-      console.log("Entreprise:", this.entreprise);
-      console.log("Encadrant:", this.encadrantEntreprise);
-    }
-
-
- 
 }

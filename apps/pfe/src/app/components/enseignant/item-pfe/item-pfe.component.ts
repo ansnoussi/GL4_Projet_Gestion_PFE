@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PFE } from '../../../models/PFE';
 
 @Component({
   selector: 'gl4-item-pfe',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemPfeComponent implements OnInit {
 
-  @Input() pfe:any;
+  @Input() pfe: PFE;
   constructor() { }
 
   ngOnInit(): void {

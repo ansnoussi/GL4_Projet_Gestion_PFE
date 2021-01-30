@@ -1,1 +1,10 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav role="navigation">
+    <gl4-admin-sidenav (sidenavClose)="sidenav.close()"></gl4-admin-sidenav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <gl4-header [showSideMenu]="true" (sidenavToggle)="sidenav.toggle()"></gl4-header>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
