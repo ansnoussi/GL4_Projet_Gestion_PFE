@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Subject } from '../../../models/Subject';
 import { SubjectService } from '../../../services/subject/subject.service';
 import { PFE } from '../../../models/PFE';
 
@@ -50,7 +49,10 @@ export class ListPfeComponent implements OnInit {
           date: "07/10/2021",
           room: '2B6-1',
           sessionID: 1,
-          speciality: 'Génie Logiciel'
+          speciality:{
+            ID: 'GL',
+            name: 'Génie Logiciel'
+          }
         },
         presentationTime : '8:30',
       })
