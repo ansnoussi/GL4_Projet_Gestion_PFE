@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Session } from 'apps/pfe/src/app/models/Session';
-import { SessionService } from 'apps/pfe/src/app/services/session/session.service';
+import { Session } from '../../../../models/Session';
+import { SessionService } from '../../../../services/session/session.service';
 
 @Component({
   selector: 'gl4-add-subject-to-session',
@@ -12,6 +12,7 @@ export class AddSubjectToSessionComponent implements OnInit {
 
   sessions:Session[]=[];
   session:Session=new Session();
+  time: string;
 
   constructor(private sessionService:SessionService) {
     this.sessions = this.sessionService.getSessions();
