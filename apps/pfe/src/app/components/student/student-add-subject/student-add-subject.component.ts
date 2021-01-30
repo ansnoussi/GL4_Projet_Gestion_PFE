@@ -12,6 +12,8 @@ export class StudentAddSubjectComponent implements OnInit {
   subject: Subject = new Subject();
   startDate:Date=new Date();
   endDate:Date= new Date();
+  tool:String;
+  tools:String[]=[];
 
 
 
@@ -20,12 +22,16 @@ export class StudentAddSubjectComponent implements OnInit {
   ngOnInit(){
   }
 
+  addTool(){
+    this.tools.push(this.tool);
+  }
 
 
   addSubject(){
     console.log(typeof(this.subject.startDate));
     this.subject.startDate = this.startDate.toLocaleString().split(' ')[0];
     this.subject.endDate = this.endDate.toLocaleString().split(' ')[0];
+    this.subject.tools=this.tools;
     this.subjectService.addSubject(this.subject);
   }
 

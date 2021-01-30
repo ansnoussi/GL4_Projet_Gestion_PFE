@@ -47,8 +47,12 @@ export class SubjectService {
   }
 
   addSubject(subject: Subject){
-    this.subjects.push(subject);
+    console.log("subject added");
+    console.log(subject);
     this.pendingSubjects.push(subject);
+    console.log("pending subjects");
+    console.log(this.pendingSubjects);
+    this.subjects.push(subject);
   }
 
 

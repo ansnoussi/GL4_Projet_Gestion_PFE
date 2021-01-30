@@ -21,9 +21,7 @@
                     <div class="col-2 left">
                         <h4>Outils</h4>
                         <ul>
-                            <li>Angular</li>
-                            <li>Material UI</li>
-                            <li>MongoDB</li>
+                            <li *ngFor="let tool of subject.tools">{{tool}}</li>
                         </ul>
                     </div>
                 </div>

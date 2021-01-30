@@ -64,7 +64,8 @@ export class StudentComponent implements OnInit {
         fax: '001455778552',
         name: "SMART IT SARL",
         website: 'smartIT.fr'
-      }
+      },
+      tools:["AI","angular","nodejs"]
 
     })
     this.subjectService.addSubject(this.subjectService.getAllSubjects()[0]);

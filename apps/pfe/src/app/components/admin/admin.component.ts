@@ -64,7 +64,8 @@ export class AdminComponent implements OnInit {
         fax: '001455778552',
         name: "SMART IT SARL",
         website: 'smartIT.fr'
-      }
+      },
+      tools:["AI","angular","nodejs"]
 
     })
     this.subjectService.addAcceptedSubject(this.subjectService.getAcceptedSubjects()[0]);

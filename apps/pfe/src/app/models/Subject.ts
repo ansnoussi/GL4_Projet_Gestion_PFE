@@ -13,6 +13,7 @@ export class Subject{
   public student: Student = new Student();
   public enterpriseSupervisor: EnterpriseSupervisor = new EnterpriseSupervisor();
   public universitySupervisor: Professor = new Professor();
+  public tools:String[]=[];
 
   constructor() {
   }

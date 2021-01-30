@@ -70,7 +70,8 @@ export class PendingSubjectsComponent implements OnInit {
         fax: '001455778552',
         name: "SMART IT SARL",
         website: 'smartIT.fr'
-      }
+      },
+      tools:["angular","nestjs"]
 
     })
     this.subjectService.addSubject(this.subjectService.getPendingSubjects()[0]);

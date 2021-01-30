@@ -79,3 +79,7 @@ button{
 input.ng-invalid.ng-touched.dirty{
   border: red ;
 }
+
+.tool{
+  margin-left:18px;
+}

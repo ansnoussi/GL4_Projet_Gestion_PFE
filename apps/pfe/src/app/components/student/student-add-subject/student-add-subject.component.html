@@ -24,6 +24,25 @@
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
 
+
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field>
+              <input [(ngModel)]="tool" name="tool" type="text" matInput placeholder="Outil" required>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <button mat-stroked-button color="primary" class="btn-block" (click)="addTool()">Ajouter Outil</button>
+          </div>
+        </div>
+
+
+        <div *ngIf="tools" class="row">
+            <div *ngFor="let toolItem of tools" class="tool">
+              {{toolItem}}
+            </div>
+        </div>
+
       </mat-card-content>
 
 

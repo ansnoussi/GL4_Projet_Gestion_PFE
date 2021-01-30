@@ -10,7 +10,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() public showSideMenu;
   logout(){
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('/admin');
   }
 
   @Output() public sidenavToggle = new EventEmitter();
