@@ -83,3 +83,7 @@ input.ng-invalid.ng-touched.dirty{
 .tool{
   margin-left:18px;
 }
+
+.add-tool-button{
+  margin-top: 20px;
+}

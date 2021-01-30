@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from '../../../models/Subject';
 import { SubjectService } from '../../../services/subject/subject.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'gl4-student-add-subject',
@@ -8,6 +9,8 @@ import { SubjectService } from '../../../services/subject/subject.service';
   styleUrls: ['./student-add-subject.component.css']
 })
 export class StudentAddSubjectComponent implements OnInit {
+
+  @ViewChild('addSubjectForm', {static: false}) addSubjectForm: NgForm;
 
   subject: Subject = new Subject();
   startDate:Date=new Date();
@@ -33,6 +36,7 @@ export class StudentAddSubjectComponent implements OnInit {
     this.subject.endDate = this.endDate.toLocaleString().split(' ')[0];
     this.subject.tools=this.tools;
     this.subjectService.addSubject(this.subject);
+    this.addSubjectForm.resetForm();
   }
 
 

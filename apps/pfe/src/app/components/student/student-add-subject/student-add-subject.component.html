@@ -1,5 +1,5 @@
 <mat-card class="box">
-  <form #addSubjectForm="ngForm">
+  <form #addSubjectForm="ngForm" name="addSubjectForm">
     <!--Sujet-->
     <mat-card-header>
       <mat-card-title>Sujet</mat-card-title>
@@ -31,7 +31,7 @@
               <input [(ngModel)]="tool" name="tool" type="text" matInput placeholder="Outil" required>
             </mat-form-field>
           </div>
-          <div class="col-6">
+          <div class="col-6 add-tool-button">
             <button mat-stroked-button color="primary" class="btn-block" (click)="addTool()">Ajouter Outil</button>
           </div>
         </div>

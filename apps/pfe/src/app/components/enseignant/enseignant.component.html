@@ -1,19 +1,15 @@
 <gl4-header [showSideMenu]="false"></gl4-header>
 <mat-tab-group mat-align-tabs="center">
-    <mat-tab label="Liste des PFEs">
+  <mat-tab label="Liste des PFEs">
 
+    <div *ngFor="let pfe of listPfe">
+      <gl4-item-pfe [pfe]="pfe"></gl4-item-pfe>
+    </div>
 
-
-        <div *ngFor="let pfe of listPfe">
-            <gl4-item-pfe [pfe]="pfe"></gl4-item-pfe>
-        </div>
-
-
-
-    </mat-tab>
-    <mat-tab label="Liste des encadrements">
-        <div *ngFor="let supervision of supervisionList">
-            <gl4-item-encadrement [supervision]="supervision"></gl4-item-encadrement>
-        </div>
-    </mat-tab>
+  </mat-tab>
+  <mat-tab label="Liste des encadrements">
+    <div *ngFor="let supervision of supervisionList">
+      <gl4-item-encadrement [encadrement]="supervision"></gl4-item-encadrement>
+    </div>
+  </mat-tab>
 </mat-tab-group>
