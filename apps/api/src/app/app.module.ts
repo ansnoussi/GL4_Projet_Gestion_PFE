@@ -12,8 +12,6 @@ import { SujetModule } from './sujet/sujet.module';
 import { SoutenanceModule } from './soutenance/soutenance.module';
 import { SessionModule } from './session/session.module';
 import { SalleModule } from './salle/salle.module';
-import { EtudiantModule } from './etudiant/etudiant.module';
-import { EnseignantModule } from './enseignant/enseignant.module';
 import { AnneeModule } from './annee/annee.module';
 
 
@@ -28,8 +26,6 @@ import { AnneeModule } from './annee/annee.module';
     SoutenanceModule,
     SessionModule,
     SalleModule,
-    EtudiantModule,
-    EnseignantModule,
     AnneeModule
   ],
   controllers: [AppController],
