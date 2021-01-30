@@ -15,4 +15,5 @@ div {
 .search-bar{
   max-width: 300px;
   margin-left: 40%;
+  margin-bottom: -7px;
 }
