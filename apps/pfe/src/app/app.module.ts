@@ -28,7 +28,7 @@ import { ItemPfeComponent } from './components/enseignant/item-pfe/item-pfe.comp
 import { ItemEncadrementComponent } from './components/enseignant/item-encadrement/item-encadrement.component';
 import { StudentComponent } from './components/student/student.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
-import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
+import { SidenavListComponent } from './components/student/navigation/sidenav-list/sidenav-list.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { UploaderRapportPFEComponent } from './components/student/uploader-rapport-pfe/uploader-rapport-pfe.component';
 import { ListPfeComponent } from './components/student/list-pfe/list-pfe.component';
@@ -66,19 +66,19 @@ import { AddSubjectToSessionComponent } from './components/admin/pfes-list/add-s
     SidenavListComponent,
     LayoutComponent,
     UploaderRapportPFEComponent,
-    ListPfeComponent, 
-    SearchComponent, 
-    AddAUComponent, 
-    AddEnseignantComponent, 
-    AddStudentComponent, 
-    AdminSidenavComponent, 
-    AddSessionComponent, 
-    PendingSubjectsComponent, 
-    ItemPendingSubjectComponent, 
-    ReasonComponent, 
-    PfesListComponent, 
+    ListPfeComponent,
+    SearchComponent,
+    AddAUComponent,
+    AddEnseignantComponent,
+    AddStudentComponent,
+    AdminSidenavComponent,
+    AddSessionComponent,
+    PendingSubjectsComponent,
+    ItemPendingSubjectComponent,
+    ReasonComponent,
+    PfesListComponent,
     PfeItemAdminComponent,
-    ImportDataFromFileComponent, 
+    ImportDataFromFileComponent,
     AddSubjectToSessionComponent],
   imports: [BrowserModule,
     HttpClientModule,

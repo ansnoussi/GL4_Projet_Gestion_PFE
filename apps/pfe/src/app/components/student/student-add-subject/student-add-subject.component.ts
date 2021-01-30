@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class StudentAddSubjectComponent implements OnInit {
 
+
   @ViewChild('addSubjectForm', {static: false}) addSubjectForm: NgForm;
 
   subject: Subject = new Subject();
