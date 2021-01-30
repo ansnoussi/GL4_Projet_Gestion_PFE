@@ -6,7 +6,7 @@ import { Session } from '../../models/Session';
   providedIn: 'root'
 })
 export class SessionService {
-  
+
   selectedPFE: PFE = new PFE();
   sessions:Session[]=[];
 
@@ -22,8 +22,9 @@ export class SessionService {
      return(this.sessions);
   }
 
-  onAddSessionToSubject(session: Session) {
+  onAddSessionToSubject(session: Session, time: string) {
     this.selectedPFE.session=session;
+    this.selectedPFE.presentationTime = time;
   }
 
   setSelectedPFE(pfe: PFE) {

@@ -16,7 +16,7 @@
     <mat-form-field align="center">
       <mat-label>Session</mat-label>
       <mat-select [(ngModel)]="session" name="session" required>
-        <mat-option [value]="sessionOption" *ngFor="let sessionOption of sessions">{{sessionOption.speciality}} - {{sessionOption.sessionID}}
+        <mat-option [value]="sessionOption" *ngFor="let sessionOption of sessions">{{sessionOption.speciality.ID}} - Session {{sessionOption.sessionID}}
         </mat-option>
       </mat-select>
     </mat-form-field>
