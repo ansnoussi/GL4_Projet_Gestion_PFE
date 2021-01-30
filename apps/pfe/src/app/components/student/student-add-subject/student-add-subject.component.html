@@ -7,119 +7,255 @@
 
     <mat-card-content>
       <mat-form-field>
-          <input [(ngModel)]="subject.title" name="titre" type="text" matInput placeholder="Intitulé" required>
-        </mat-form-field>
-        <mat-form-field>
-          <textarea [(ngModel)]="subject.objective" name="objectif" type="text" matInput placeholder="Objectif du travail demandé" required></textarea>
-        </mat-form-field>
+        <input [(ngModel)]="subject.title" #title="ngModel" name="titre" type="text" matInput placeholder="Intitulé" required>
+      </mat-form-field>
+      <div
+        *ngIf="title.invalid && title.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+      <mat-form-field>
+        <textarea [(ngModel)]="subject.objective" #objective="ngModel" name="objectif" type="text" matInput placeholder="Objectif du travail demandé" required></textarea>
+      </mat-form-field>
+      <div
+        *ngIf="objective.invalid && objective.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <mat-label>Date du stage</mat-label>
+        <mat-date-range-input  [rangePicker]="picker">
+          <input matStartDate [(ngModel)]="startDate" placeholder="Start date" [ngModelOptions]="{standalone: true}" required>
+          <input matEndDate [(ngModel)]="endDate" placeholder="End date" [ngModelOptions]="{standalone: true}" required>
+        </mat-date-range-input>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-date-range-picker #picker></mat-date-range-picker>
+      </mat-form-field>
 
 
-        <mat-form-field>
-          <mat-label>Date du stage</mat-label>
-          <mat-date-range-input  [rangePicker]="picker">
-            <input matStartDate [(ngModel)]="startDate" placeholder="Start date" [ngModelOptions]="{standalone: true}" required>
-            <input matEndDate [(ngModel)]="endDate" placeholder="End date" [ngModelOptions]="{standalone: true}" required>
-          </mat-date-range-input>
-          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-          <mat-date-range-picker #picker></mat-date-range-picker>
-        </mat-form-field>
-
-
-        <div class="row">
-          <div class="col-6">
-            <mat-form-field>
-              <input [(ngModel)]="tool" name="tool" type="text" matInput placeholder="Outil" required>
-            </mat-form-field>
-          </div>
-          <div class="col-6 add-tool-button">
-            <button mat-stroked-button color="primary" class="btn-block" (click)="addTool()">Ajouter Outil</button>
-          </div>
+      <div class="row">
+        <div class="col-6">
+          <mat-form-field>
+            <input [(ngModel)]="tool" name="tool" type="text" matInput placeholder="Outil" required>
+          </mat-form-field>
         </div>
-
-
-        <div *ngIf="tools" class="row">
-            <div *ngFor="let toolItem of tools" class="tool">
-              {{toolItem}}
-            </div>
+        <div class="col-6 add-tool-button">
+          <button mat-stroked-button color="primary" class="btn-block" (click)="addTool()">Ajouter Outil</button>
         </div>
-
-      </mat-card-content>
-
-
-            <!--Entreprise-->
-            <mat-card-header>
-              <mat-card-title>Entreprise d'accueil</mat-card-title>
-            </mat-card-header>
-
-            <mat-card-content>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.name" type="text" name="nameEntreprise" matInput placeholder="Nom de l'entreprise" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.responsible" type="text" name="responsableEntreprise" matInput placeholder="Responsable de l'entreprise" required>
-              </mat-form-field>
-              <mat-form-field>
-                <textarea [(ngModel)]="subject.enterprise.description" name="descriptionEntreprise" type="text" matInput placeholder="Description de l'entreprise" required></textarea>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.address" type="text" name="adresseEntreprise" matInput placeholder="Adresse personnel" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.postalCode" type="text" name="codePostaleEntreprise" matInput placeholder="Code Postale" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.city" type="text" name="villeEntreprise" matInput placeholder="Ville" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.country" type="text" name="pays" matInput placeholder="pays" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.email" email type="email" name="emailEntreprise" matInput placeholder="Email" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.phone" name="telEntreprise" type="tel" matInput placeholder="Téléphone" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.fax" name="faxEntreprise" type="tel" matInput placeholder="Fax" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterprise.website" type="url" name="siteEntreprise" matInput placeholder="Site" required>
-              </mat-form-field>
-
-            </mat-card-content>
+      </div>
 
 
+      <div *ngIf="tools" class="row">
+        <div *ngFor="let toolItem of tools" class="tool">
+          {{toolItem}}
+        </div>
+      </div>
 
-            <!--Encadrant de l'Entreprise-->
-            <mat-card-header>
-              <mat-card-title>Encadrant à l'entreprise</mat-card-title>
-            </mat-card-header>
+    </mat-card-content>
 
-            <mat-card-content>
 
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.lastname" type="text" name="encadrantEntrepriseNom" matInput placeholder="Nom" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.firstname" type="text" name="encadrantEntreprisePrenom" matInput placeholder="Prenom" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.grade" type="text" name="encadrantEntrepriseGrade" matInput placeholder="Grade/Specialite" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.email" name="encadrantEntrepriseEmail" type="email" matInput placeholder="Email" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.phone" name="encadrantEntrepriseTel" type="tel" matInput placeholder="Téléphone" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.fax" name="encadrantEntrepriseFax" type="tel" matInput placeholder="Fax" required>
-              </mat-form-field>
-              <mat-form-field>
-                <input [(ngModel)]="subject.enterpriseSupervisor.postalCode" type="text" name="encadrantEntreprisePoste" matInput placeholder="Poste" required>
-              </mat-form-field>
-            </mat-card-content>
-    </form>
-    <button mat-stroked-button color="primary" class="btn-block" [disabled]="addSubjectForm.invalid" (click)="addSubject()">Ajouter</button>
+    <!--Entreprise-->
+    <mat-card-header>
+      <mat-card-title>Entreprise d'accueil</mat-card-title>
+    </mat-card-header>
 
-  </mat-card>
+    <mat-card-content>
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.name" #enterpriseName="ngModel" type="text" name="nameEntreprise" matInput placeholder="Nom de l'entreprise" required>
+      </mat-form-field>
+      <div
+        *ngIf="enterpriseName.invalid && enterpriseName.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.responsible" #enterpriseResponsible="ngModel" type="text" name="responsableEnterprise" matInput placeholder="Responsable de l'entreprise" required>
+      </mat-form-field>
+      <div
+        *ngIf="enterpriseResponsible.invalid && enterpriseResponsible.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <textarea [(ngModel)]="subject.enterprise.description" #descriptionEnterprise="ngModel" name="descriptionEnterprise" type="text" matInput placeholder="Description de l'entreprise" required></textarea>
+      </mat-form-field>
+      <div
+        *ngIf="descriptionEnterprise.invalid && descriptionEnterprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.address" #adresseEntreprise="ngModel" type="text" name="adresseEntreprise" matInput placeholder="Adresse personnel" required>
+      </mat-form-field>
+      <div
+        *ngIf="adresseEntreprise.invalid && adresseEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.postalCode" #codePostaleEntreprise="ngModel" type="text" name="codePostaleEntreprise" matInput placeholder="Code Postale" required>
+      </mat-form-field>
+      <div
+        *ngIf="codePostaleEntreprise.invalid && codePostaleEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.city" #villeEntreprise="ngModel" type="text" name="villeEntreprise" matInput placeholder="Ville" required>
+      </mat-form-field>
+      <div
+        *ngIf="villeEntreprise.invalid && villeEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.country" #pays="ngModel" type="text" name="pays" matInput placeholder="pays" required>
+      </mat-form-field>
+      <div
+        *ngIf="pays.invalid && pays.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.email" #emailEntreprise="ngModel" email type="email" name="emailEntreprise" matInput placeholder="Email" required>
+      </mat-form-field>
+      <div
+        *ngIf="emailEntreprise.invalid && emailEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.phone" #telEntreprise="ngModel" name="telEntreprise" type="tel" matInput placeholder="Téléphone" required>
+      </mat-form-field>
+      <div
+        *ngIf="telEntreprise.invalid && telEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.fax" #faxEntreprise="ngModel" name="faxEntreprise" type="tel" matInput placeholder="Fax" required>
+      </mat-form-field>
+      <div
+        *ngIf="faxEntreprise.invalid && faxEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterprise.website" #siteEntreprise="ngModel" type="url" name="siteEntreprise" matInput placeholder="Site" required>
+      </mat-form-field>
+      <div
+        *ngIf="siteEntreprise.invalid && siteEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+    </mat-card-content>
+
+
+
+    <!--Encadrant de l'Entreprise-->
+    <mat-card-header>
+      <mat-card-title>Encadrant à l'entreprise</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.lastname" #encadrantEntrepriseNom="ngModel" type="text" name="encadrantEntrepriseNom" matInput placeholder="Nom" required>
+      </mat-form-field>
+      <div
+        *ngIf="encadrantEntrepriseNom.invalid && encadrantEntrepriseNom.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.firstname" #encadrantEntreprisePrenom="ngModel" type="text" name="encadrantEntreprisePrenom" matInput placeholder="Prenom" required>
+      </mat-form-field>
+      <div
+        *ngIf="encadrantEntreprisePrenom.invalid && encadrantEntreprisePrenom.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.grade" #encadrantEntrepriseGrade="ngModel" type="text" name="encadrantEntrepriseGrade" matInput placeholder="Grade/Specialite" required>
+      </mat-form-field>
+      <div
+        *ngIf="encadrantEntrepriseGrade.invalid && encadrantEntrepriseGrade.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.email" #encadrantEntrepriseEmail="ngModel" name="encadrantEntrepriseEmail" type="email" matInput placeholder="Email" required>
+      </mat-form-field>
+      <div
+        *ngIf="encadrantEntrepriseEmail.invalid && encadrantEntrepriseEmail.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.phone" #encadrantEntrepriseTel="ngModel" name="encadrantEntrepriseTel" type="tel" matInput placeholder="Téléphone" required>
+      </mat-form-field>
+      <div
+        *ngIf="encadrantEntrepriseTel.invalid && encadrantEntrepriseTel.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.fax" #encadrantEntrepriseFax="ngModel" name="encadrantEntrepriseFax" type="tel" matInput placeholder="Fax" required>
+      </mat-form-field>
+      <div
+        *ngIf="siteEntreprise.invalid && siteEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="subject.enterpriseSupervisor.postalCode" #encadrantEntreprisePoste="ngModel" type="text" name="encadrantEntreprisePoste" matInput placeholder="Poste" required>
+      </mat-form-field>
+      <div
+        *ngIf="siteEntreprise.invalid && siteEntreprise.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+    </mat-card-content>
+  </form>
+  <button mat-stroked-button color="primary" class="btn-block" [disabled]="addSubjectForm.invalid" (click)="addSubject()">Ajouter</button>
+
+</mat-card>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from '../../../models/Subject';
 import { SubjectService } from '../../../services/subject/subject.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, NgModel } from '@angular/forms';
 
 @Component({
   selector: 'gl4-student-add-subject',
@@ -12,6 +12,7 @@ export class StudentAddSubjectComponent implements OnInit {
 
 
   @ViewChild('addSubjectForm', {static: false}) addSubjectForm: NgForm;
+  @ViewChild('toolChamp', {static: false}) toolChamp: NgModel;
 
   subject: Subject = new Subject();
   startDate:Date=new Date();
@@ -28,6 +29,7 @@ export class StudentAddSubjectComponent implements OnInit {
 
   addTool(){
     this.tools.push(this.tool);
+    this.tool = '';
   }
 
 
