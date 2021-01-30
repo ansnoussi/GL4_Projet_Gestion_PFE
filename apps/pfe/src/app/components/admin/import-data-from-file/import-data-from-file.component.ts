@@ -46,37 +46,54 @@ export class ImportDataFromFileComponent implements OnInit {
     };
     reader.readAsBinaryString(target.files[0]);
     this.uploadComplete = true;
-
-
-    if(1 === 1){
-      // Send data to student service
-    }
-    else {
-      // Send data to professor service
-    }
-
   }
 
   onSubmit(){
-    console.log("Debut ajout")
-    this.data.forEach(ligne => {
-      this.adminService.addProfessor({
-        ID: ligne[0],
-        lastname: ligne[1],
-        firstname: ligne[2],
-        postalCode: ligne[3],
-        phone: ligne[4],
-        email: ligne[5],
-        address: ligne[6],
-        city: ligne[7],
-        grade: ligne[8],
-        nationality: ligne[9],
-        nationalIdentityCard: ligne[10],
-        passport: ligne[11]
+    console.log(this.data);
+    console.log("Length" + this.data[0].length);
+    if(this.data[0].length === 12){
+      console.log("Debut ajout Professor")
+      this.data.forEach(professor => {
+        this.adminService.addProfessor({
+          ID: professor[0],
+          lastname : professor[1],
+          firstname : professor[2],
+          postalCode : professor[3],
+          phone: professor[4],
+          email : professor[5],
+          address : professor[6],
+          city : professor[7],
+          grade : professor[8],
+          nationality : professor[9],
+          nationalIdentityCard : professor[10],
+          passport : professor[11],
+        })
       })
-    })
-    const professors = this.adminService.getProfessors();
-    console.log(professors);
+    }
+    else {
+      console.log("Debut ajout Etudiant")
+      this.data.forEach(student => {
+        this.adminService.addStudent({
+          ID: student[0],
+          lastname : student[1],
+          firstname : student[2],
+          postalCode : student[3],
+          phone: student[4],
+          email : student[5],
+          address : student[6],
+          city : student[7],
+          speciality : student[8],
+          studyLevel : student[9],
+          nationality : student[10],
+          nationalIdentityCard : student[11],
+          passport: student[12]
+        })
+      })
+    }
+
+    console.log(this.adminService.getProfessors())
+    console.log(this.adminService.getStudents())
+
   }
 
 }
