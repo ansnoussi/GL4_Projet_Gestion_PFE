@@ -10,6 +10,7 @@ import { EtudiantController } from './controllers/etudiant/etudiant.controller';
 import { EnseignantController } from './controllers/enseignant/enseignant.controller';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './user/users.module';
+import { AdminModule } from "./admin/admin.module"
 
 @Module({
   imports: [
@@ -17,8 +18,9 @@ import { UsersModule } from './user/users.module';
     MongooseModule.forRoot(process.env.DATABASE_URL),
     AuthModule,
     UsersModule,
+    AdminModule
   ],
   controllers: [AppController, EntrepriseController, EtudiantController, EnseignantController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
