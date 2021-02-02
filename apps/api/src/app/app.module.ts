@@ -5,12 +5,16 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 //import mongoUrl from './config/db'
-import { EntrepriseController } from './controllers/entreprise/entreprise.controller';
-import { EtudiantController } from './controllers/etudiant/etudiant.controller';
-import { EnseignantController } from './controllers/enseignant/enseignant.controller';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './user/users.module';
 import { AdminModule } from "./admin/admin.module"
+
+import { SujetModule } from './sujet/sujet.module';
+import { SoutenanceModule } from './soutenance/soutenance.module';
+import { SessionModule } from './session/session.module';
+import { SalleModule } from './salle/salle.module';
+import { AnneeModule } from './annee/annee.module';
+
 
 @Module({
   imports: [
@@ -18,9 +22,14 @@ import { AdminModule } from "./admin/admin.module"
     MongooseModule.forRoot(process.env.DATABASE_URL),
     AuthModule,
     UsersModule,
-    AdminModule
+    AdminModule,
+    SujetModule,
+    SoutenanceModule,
+    SessionModule,
+    SalleModule,
+    AnneeModule
   ],
-  controllers: [AppController, EntrepriseController, EtudiantController, EnseignantController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule { }

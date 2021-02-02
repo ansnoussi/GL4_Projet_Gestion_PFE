@@ -2,9 +2,9 @@ import { Model } from 'mongoose';
 import { Injectable, NotAcceptableException, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { IUser } from './interfaces/user.interface';
-import { CreateUserDto } from './dto/create-user.dto';
 import { AuthService } from '../auth/auth.service';
-import { LoginUserDto } from './dto/login-user.dto';
+
+import { CreateUserDto, LoginUserDto } from "@gl4/api-interfaces"
 
 @Injectable()
 export class UsersService {

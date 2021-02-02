@@ -1,44 +1,29 @@
-import { Controller, Get, Post, Body, UseGuards, NotFoundException, Patch, Param } from '@nestjs/common';
+import { Controller, Get, Post, Body, UseGuards, NotFoundException, Patch, Param, Res } from '@nestjs/common';
 import { AuthGuard } from '@nestjs/passport';
 import { AdminService } from './admin.service';
-import { CreateSalleDto } from './dto/create-salle.dto';
+import { newEnseignantDto } from '@gl4/api-interfaces';
 
 @Controller('admin')
 export class AdminController {
-    /*
-        constructor(private usersService: UsersService) {
-    
-        }
-    
-        @Post('enseignants')
-        @UseGuards(AuthGuard('jwt'))
-        async create(@Body() createUserDto: CreateUserDto) {
-            const doc = await this.usersService.create(createUserDto);
-            return {
-                userId: doc.id,
-                success: true
-            }
-        }
-    */
     constructor(private adminService: AdminService) {
 
     }
 
-    @Post('salles')
-    async createSalle(@Body() createSalleDto: CreateSalleDto) {
-        const doc = await this.adminService.createSalle(createSalleDto);
-        return {
-            salleId: doc._id,
-            success: true
+    @Post('enseignant')
+    // @UseGuards(AuthGuard('jwt'))
+    async createEnseignant(@Body() body: newEnseignantDto, @Res() response) {
+        try {
+            const newEnseignat = await this.adminService.createNewEnseignant(body)
+            return {
+                success : true,
+                data : newEnseignat
+            }
+        } catch (e) {
+            response.status(500).json({
+                message: "Impossible d'ajouter un enseignant",
+                success: false,
+                e,
+            });
         }
-    }
-
-    @Get('salles')
-    async getSalles() {
-        const docs = await this.adminService.getAllSalles();
-        if (!docs) {
-            return NotFoundException;
-        }
-        return docs
     }
 }
