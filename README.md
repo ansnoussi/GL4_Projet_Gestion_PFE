@@ -69,3 +69,6 @@ In our case we have 2 apps that we work on:
 - pfe
 
 ## [API Documentation (google drive)](https://docs.google.com/document/d/1DXMlNhXRMlfBhapSvZWi-8lfLtIMzSMKtFPTV8YO4ek/edit?usp=sharing) 
+
+## [Cahier des charges (google drive)](https://docs.google.com/document/d/1-aJ2ZDoRYtF6gIIW117Xa49l_KhE_5aikEq4YYEdGLA/edit?usp=sharing) 
+
