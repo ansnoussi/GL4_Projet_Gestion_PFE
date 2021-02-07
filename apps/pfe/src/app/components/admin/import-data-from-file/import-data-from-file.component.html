@@ -1,0 +1,23 @@
+<mat-dialog-actions align="end">
+  <button
+    class="close"
+    mat-button
+    mat-dialog-close>
+    <i class="material-icons">close</i>
+  </button>
+</mat-dialog-actions>
+
+<h2 class="center-text">Importer un fichier Excel</h2>
+
+<div class="import-button center-text" *ngIf="!uploadComplete">
+  <input type="file" (change)="onUploadClick($event)" multiple="false"/>
+</div>
+
+<div *ngIf="uploadComplete" class="center-text filename">
+  {{filename}}
+</div>
+
+<button *ngIf="uploadComplete" class="done-button center" mat-button mat-dialog-close color="warn" (click)="onSubmit()">
+  <mat-icon>done</mat-icon>
+  OK
+</button>

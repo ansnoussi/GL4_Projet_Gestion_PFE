@@ -1,0 +1,7 @@
+<div class="search-bar">
+  <gl4-search (search)="onSearch($event)" (universityYear)="onUniversityYearChange($event)"></gl4-search>
+</div>
+
+<div *ngFor="let pfe of filtredPfes">
+    <gl4-item-pfe [pfe]="pfe"></gl4-item-pfe>
+</div>

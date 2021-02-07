@@ -1,0 +1,18 @@
+<mat-toolbar>
+  <div *ngIf="showSideMenu">
+    <button mat-icon-button (click)="onToggleSidenav()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <span>Bonjour {{username}}</span>
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+    <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+      <form class="form-inline waves-light" mdbWavesEffect>
+          <button mat-stroked-button color="primary" class="btn" (click)="logout()">Déconnecter</button>
+      </form>
+    </ul>
+  </div>
+</mat-toolbar>

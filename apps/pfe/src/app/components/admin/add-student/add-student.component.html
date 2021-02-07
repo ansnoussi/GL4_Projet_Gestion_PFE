@@ -1,0 +1,133 @@
+<mat-card class="box">
+  <form #addStudentForm="ngForm" name="addStudentForm">
+
+    <h2 class="center-text">Ajouter Etudiant</h2>
+    <mat-card-content>
+      <mat-form-field>
+        <input [(ngModel)]="student.lastname" #lastname="ngModel" name="lastname" type="text" matInput placeholder="Nom" required>
+      </mat-form-field>
+      <div
+        *ngIf="lastname.invalid && lastname.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.firstname" #firstname="ngModel" name="firstname" type="text" matInput placeholder="Prénom" required>
+      </mat-form-field>
+      <div
+        *ngIf="firstname.invalid && firstname.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <mat-label>Spécialité</mat-label>
+        <mat-select [(ngModel)]="student.speciality" name="speciality">
+          <mat-option [value]="speciality" *ngFor="let speciality of specialities">{{speciality}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Niveau</mat-label>
+        <mat-select [(ngModel)]="student.studyLevel" name="studyLevel">
+          <mat-option [value]="studyLevel" *ngFor="let studyLevel of studyLevels">{{studyLevel}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <input [(ngModel)]="student.nationality" #nationality="ngModel" name="nationality" type="text" matInput placeholder="Nationnalité" required>
+      </mat-form-field>
+      <div
+        *ngIf="nationality.invalid && nationality.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.address" #address="ngModel" name="address" type="text" matInput placeholder="Adresse" required>
+      </mat-form-field>
+      <div
+        *ngIf="address.invalid && address.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+
+      <mat-form-field>
+        <input [(ngModel)]="student.city" #city="ngModel" name="city" type="text" matInput placeholder="Cité" required>
+      </mat-form-field>
+      <div
+        *ngIf="city.invalid && city.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.postalCode" #postalCode="ngModel" name="postalCode" type="number" matInput placeholder="Code postal" required>
+      </mat-form-field>
+      <div
+        *ngIf="postalCode.invalid && postalCode.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.phone" #phone="ngModel" name="phone" type="number" matInput placeholder="Téléphone" required>
+      </mat-form-field>
+      <div
+        *ngIf="phone.invalid && phone.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.email" #email="ngModel" email name="email" type="email" matInput placeholder="Email" required>
+      </mat-form-field>
+      <div
+        *ngIf="email.invalid && email.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire et doit être valide
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.nationalIdentityCard" #nationalIdentityCard="ngModel" name="nationalIdentityCard" type="number" matInput placeholder="CIN" required>
+      </mat-form-field>
+      <div
+        *ngIf="nationalIdentityCard.invalid && nationalIdentityCard.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+      <mat-form-field>
+        <input [(ngModel)]="student.passport" #passport="ngModel" name="passport" type="number" matInput placeholder="Passeport">
+      </mat-form-field>
+      <div
+        *ngIf="passport.invalid && passport.touched"
+        class="alert alert-danger"
+      >
+        Ce champs est obligatoire
+      </div>
+
+    </mat-card-content>
+
+
+  </form>
+  <button mat-stroked-button color="primary" type="submit" class="btn-block" [disabled]="addStudentForm.invalid" (click)="addStudent()">Ajouter</button>
+
+  <button mat-stroked-button color="primary" class="btn-block import-button" (click)="onImport()">Importer depuis un fichier</button>
+
+
+</mat-card>
