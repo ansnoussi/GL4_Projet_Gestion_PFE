@@ -17,6 +17,14 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         enum: Object.values(Role),
         required:true
+    },
+    enseignant : {
+        type: mongoose.Types.ObjectId,
+        ref:'Enseignant'
+    },
+    etudiant : {
+        type: mongoose.Types.ObjectId,
+        ref: 'Etudiant'
     }
 },{timestamps:true});
 
