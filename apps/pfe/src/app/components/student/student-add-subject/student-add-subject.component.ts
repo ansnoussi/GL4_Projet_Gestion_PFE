@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from '../../../models/Subject';
 import { SubjectService } from '../../../services/subject/subject.service';
 import { NgForm, NgModel } from '@angular/forms';
+import { StudentService } from '../../../services/student/student.service';
 
 @Component({
   selector: 'gl4-student-add-subject',
@@ -22,7 +23,7 @@ export class StudentAddSubjectComponent implements OnInit {
 
 
 
-  constructor(private subjectService: SubjectService) { }
+  constructor(private subjectService: SubjectService, private studentService:StudentService) { }
 
   ngOnInit(){
   }
@@ -34,12 +35,16 @@ export class StudentAddSubjectComponent implements OnInit {
 
 
   addSubject(){
-    console.log(typeof(this.subject.startDate));
     this.subject.startDate = this.startDate.toLocaleString().split(' ')[0];
     this.subject.endDate = this.endDate.toLocaleString().split(' ')[0];
     this.subject.tools=this.tools;
-    this.subjectService.addSubject(this.subject);
+    this.subjectService.addSubject(this.cloneObject(this.subject));
+    this.studentService.setSubmittedSubject(true);
     this.addSubjectForm.resetForm();
+  }
+
+  cloneObject(obj: any) {
+    return Object.assign({}, obj);
   }
 
 

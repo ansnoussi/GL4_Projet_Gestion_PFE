@@ -18,7 +18,7 @@ export class AddStudentComponent implements OnInit {
   specialities: any = ['Génie logiciel', 'Informatique Industrielle et Automatique','Instrumentation et Maintenance Industrielle','Réseaux Informatiques et Télécommunications','Chimie Industrielle','Biologie Industrielle'];
   studyLevels: any = ['3ème licence appliqué', '5ème'];
 
-  student:Student = new Student();
+  student = new Student();
 
   constructor(private adminService:AdminService, private router: Router, public dialog: MatDialog) { }
 
@@ -26,8 +26,12 @@ export class AddStudentComponent implements OnInit {
   }
 
   addStudent(){
-    this.adminService.addStudent(this.student);
+    this.adminService.addStudent(this.cloneObject(this.student));
     this.addStudentForm.resetForm();
+  }
+
+  cloneObject(obj: any) {
+    return Object.assign({}, obj);
   }
 
 

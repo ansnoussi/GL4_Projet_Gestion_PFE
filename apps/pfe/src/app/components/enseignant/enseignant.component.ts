@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PFE } from '../../models/PFE';
 import { Subject } from '../../models/Subject';
 import { EnseignantService } from '../../services/enseigant/enseignant.service';
+import { PfeService } from '../../services/pfe/pfe.service';
 import { SubjectService } from '../../services/subject/subject.service';
 
 @Component({
@@ -11,13 +13,13 @@ import { SubjectService } from '../../services/subject/subject.service';
 export class EnseignantComponent implements OnInit {
 
 
-  listPfe:Subject[]=[];
+  listPfe:PFE[]=[];
   supervisionList:Subject[]=[];
 
 
 
-  constructor(private subjectService:SubjectService, private enseignantService:EnseignantService) {
-    this.listPfe=this.subjectService.getAllSubjects();
+  constructor(private pfeService:PfeService, private enseignantService:EnseignantService) {
+    this.listPfe=this.pfeService.getPFEs();
     this.supervisionList=this.enseignantService.getSupervisionList();
    }
 

@@ -1,9 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Subject } from 'apps/pfe/src/app/models/Subject';
-import { SubjectService } from 'apps/pfe/src/app/services/subject/subject.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { ReasonComponent } from '../reason/reason.component';
+import { Subject } from '../../../../models/Subject';
+import { PfeService } from '../../../../services/pfe/pfe.service';
+import { SubjectService } from '../../../../services/subject/subject.service';
 
 @Component({
   selector: 'gl4-item-pending-subject',
@@ -16,20 +16,23 @@ export class ItemPendingSubjectComponent implements OnInit {
 
   @Output() sidenavClose = new EventEmitter();
 
-  constructor(private subjectService:SubjectService, private router: Router, public dialog: MatDialog) { }
+  constructor(private subjectService:SubjectService, private pfeService:PfeService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
   acceptSubject(){
-    this.subjectService.addAcceptedSubject(this.subject);
+    this.subjectService.addAcceptedSubject(this.cloneObject(this.subject));
+    this.pfeService.acceptSubject(this.subject);
   }
 
-  refuseSubject(){
-    this.subjectService.refuseSubject(this.subject);
+  cloneObject(obj: any) {
+    return Object.assign({}, obj);
   }
+
 
   onRefuse(){
+    this.subjectService.setSubjectToRefuse(this.subject);
     this.openDialog(ReasonComponent, '50%')
   }
 

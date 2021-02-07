@@ -23,8 +23,12 @@ export class AddEnseignantComponent implements OnInit {
 
 
   addProfessor(){
-    this.adminService.addProfessor(this.professor);
+    this.adminService.addProfessor(this.cloneObject(this.professor));
     this.addProfessorForm.resetForm();
+  }
+
+  cloneObject(obj: any) {
+    return Object.assign({}, obj);
   }
 
 

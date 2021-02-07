@@ -50,4 +50,11 @@ export class SidenavListComponent implements OnInit {
     });
   }
 
+
+  onGoToHome(){
+    this.router.navigateByUrl('student/home');
+    this.onSidenavClose();
+  }
+
+
 }

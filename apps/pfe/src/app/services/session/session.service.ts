@@ -14,7 +14,6 @@ export class SessionService {
 
   addSession(session: Session) {
     this.sessions.push(session);
-    console.log(this.sessions);
   }
 
 

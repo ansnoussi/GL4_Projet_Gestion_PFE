@@ -1,0 +1,7 @@
+<div align="center">
+    <p *ngIf="!(submittedSubject || acceptedSubject)">Vous n'avez pas postulé aucun sujet</p>
+    <p *ngIf="submittedSubject && !acceptedSubject">Vous avez postulé un sujet. En attente de la réponse...</p>
+    <div *ngIf="acceptedSubject">
+        <gl4-item-pfe [pfe]="pfe"></gl4-item-pfe>
+    </div>
+</div>

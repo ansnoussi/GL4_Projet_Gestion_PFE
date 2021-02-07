@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SubjectService } from '../../../../services/subject/subject.service';
 
 @Component({
   selector: 'gl4-reason',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReasonComponent implements OnInit {
 
-  constructor() { }
+  constructor(private subjectService:SubjectService) { }
 
   reason = '';
 
@@ -15,7 +16,7 @@ export class ReasonComponent implements OnInit {
   }
 
   onSubmit(){
-
+    this.subjectService.refuseSubject(this.reason)
   }
 
 }

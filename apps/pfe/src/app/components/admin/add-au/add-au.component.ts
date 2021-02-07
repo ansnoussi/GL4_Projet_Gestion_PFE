@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../../services/admin/admin.service';
+import { UniversityYear } from '../../../models/UniversityYear';
 
 @Component({
   selector: 'gl4-add-au',
@@ -8,7 +9,7 @@ import { AdminService } from '../../../services/admin/admin.service';
 })
 export class AddAUComponent implements OnInit {
 
-  universityYearAdded='';
+  universityYearAdded: UniversityYear;
 
   constructor(private adminService:AdminService) { }
 

@@ -2,15 +2,15 @@
 
   <div class="university-year">
     <mat-form-field class="padding-right">
-      <mat-select [(ngModel)]="universityYearSelected" name="universityYear">
-        <mat-option [value]="universityYear" *ngFor="let universityYear of universityYears">{{universityYear}}
+      <mat-select [(ngModel)]="universityYearSelected" name="universityYear" (selectionChange)="onUniversityYearSelectedChange()">
+        <mat-option [value]="universityYear" *ngFor="let universityYear of universityYears">{{universityYear.name}}
         </mat-option>
       </mat-select>
     </mat-form-field>
   </div>
 
   <div class="md-form mt-0">
-    <input class="form-control mr-sm-2 padding-right search-field" type="text" placeholder="Search">
+    <input [(ngModel)]="query" class="form-control mr-sm-2 padding-right search-field" type="text" placeholder="Search" (ngModelChange)="onSearchChange()">
   </div>
 
 </div>

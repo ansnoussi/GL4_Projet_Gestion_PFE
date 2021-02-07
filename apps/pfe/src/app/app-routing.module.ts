@@ -12,13 +12,17 @@ import { AddEnseignantComponent } from './components/admin/add-enseignant/add-en
 import { AddAUComponent } from './components/admin/add-au/add-au.component';
 import { PendingSubjectsComponent } from './components/admin/pending-subjects/pending-subjects.component';
 import { PfesListComponent } from './components/admin/pfes-list/pfes-list.component';
+import { HomeComponent } from './components/student/home/home.component';
+import { LoginAdminGuard } from './guards/login-admin.guard';
+import { LoginProfessorGuard } from './guards/login-professor.guard';
+import { LoginStudentGuard } from './guards/login-student.guard';
 
 
 
 const routes: Routes = [
   {path: '',   redirectTo:'/login', pathMatch:'full'},
   {path: 'login', component: LoginComponent},
-  {path: 'admin', component: AdminComponent,
+  {path: 'admin', component: AdminComponent, canActivate: [LoginAdminGuard],
   children: [
     {path:'', redirectTo: 'pending-subjects', pathMatch: 'full'},
     {path: 'add-student', component: AddStudentComponent},
@@ -28,13 +32,14 @@ const routes: Routes = [
     {path: 'pfes', component: PfesListComponent}
   ]
 },
-  {path: 'professor', component: EnseignantComponent},
-  {path: 'student', component: StudentComponent,
+  {path: 'professor', component: EnseignantComponent, canActivate: [LoginProfessorGuard],},
+  {path: 'student', component: StudentComponent, canActivate: [LoginStudentGuard],
   children: [
     {path: '', redirectTo: 'list-pfe',pathMatch:'full'},
     {path: 'add-subject', component: StudentAddSubjectComponent},
     {path:'uploader-rapport-pfe',component:UploaderRapportPFEComponent},
-    {path:'list-pfe', component:ListPfeComponent}
+    {path:'list-pfe', component:ListPfeComponent},
+    {path:'home', component:HomeComponent}
   ]
 }
 ];

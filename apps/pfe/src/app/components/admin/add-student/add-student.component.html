@@ -98,7 +98,7 @@
         *ngIf="email.invalid && email.touched"
         class="alert alert-danger"
       >
-        Ce champs est obligatoire
+        Ce champs est obligatoire et doit être valide
       </div>
 
       <mat-form-field>
@@ -125,7 +125,7 @@
 
 
   </form>
-  <button mat-stroked-button color="primary" class="btn-block" [disabled]="addStudentForm.invalid" (click)="addStudent()">Ajouter</button>
+  <button mat-stroked-button color="primary" type="submit" class="btn-block" [disabled]="addStudentForm.invalid" (click)="addStudent()">Ajouter</button>
 
   <button mat-stroked-button color="primary" class="btn-block import-button" (click)="onImport()">Importer depuis un fichier</button>
 

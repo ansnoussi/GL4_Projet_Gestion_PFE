@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SubjectService } from '../../../services/subject/subject.service';
 import { PFE } from '../../../models/PFE';
+import { PfeService } from '../../../services/pfe/pfe.service';
 
 @Component({
   selector: 'gl4-list-pfe',
@@ -11,56 +12,38 @@ export class ListPfeComponent implements OnInit {
 
 
   listPfe:PFE[] = [];
+  filtredPfes:PFE[] = [];
 
-  constructor(private subjectService:SubjectService) {
-    const subjects = this.subjectService.getAllSubjects();
-    subjects.forEach(subject => {
-      this.listPfe.push({
-        subject: subject,
-        examiner: {
-          lastname: 'SELLAOUTI',
-          firstname: 'Aymen',
-          postalCode: 'XX458CB',
-          phone: "98554778",
-          email: 'mail@startup.tn',
-          grade: 'Maitre assisstant',
-          address: 'Cite Khadhra',
-          city: 'Tunis',
-          ID: "00014526",
-          nationalIdentityCard: '0978555',
-          nationality: 'Tunisienne',
-          passport: null,
-        },
-        session: {
-          juryPresident: {
-            lastname: 'BEN FOULEN',
-            firstname: 'Flen',
-            postalCode: 'XX458CB',
-            phone: "98554778",
-            email: 'mail@startup.tn',
-            grade: 'Maitre assisstant',
-            address: 'Cite Khadhra',
-            city: 'Tunis',
-            ID: "00014526",
-            nationalIdentityCard: '0978555',
-            nationality: 'Tunisienne',
-            passport: null
-          },
-          date: "07/10/2021",
-          room: '2B6-1',
-          sessionID: 1,
-          speciality:{
-            ID: 'GL',
-            name: 'Génie Logiciel'
-          }
-        },
-        presentationTime : '8:30',
-      })
+  constructor(private pfeService:PfeService) {
+    this.listPfe = this.pfeService.getPFEs();
+    this.listPfe.forEach(pfe => {
+      this.filtredPfes.push(pfe);
     })
   }
 
   ngOnInit(): void {
   }
+
+  onSearch(query){
+    this.filtredPfes = [];
+    this.listPfe.forEach(pfe => {
+      if(pfe.subject.title.toLowerCase().includes(query) ||
+        pfe.subject.objective.toLowerCase().includes(query) ||
+        pfe.subject.student.firstname.toLowerCase().includes(query) ||
+        pfe.subject.student.lastname.toLowerCase().includes(query) ||
+        pfe.subject.enterprise.name.toLowerCase().includes(query))
+        this.filtredPfes.push(pfe);
+    })
+  }
+
+  onUniversityYearChange(universityYear){
+    //this.filtredPfes = [];
+    //this.listPfe.forEach(pfe => {
+      //if(pfe.subject.)
+        //this.filtredPfes.push(pfe);
+    //})
+  }
+
 
 }
 

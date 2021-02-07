@@ -5,7 +5,7 @@ import { Professor } from './Professor';
 
 
 export class Subject{
-  public title = '';
+  public title: string;
   public objective = '';
   public startDate = '';
   public endDate = '';

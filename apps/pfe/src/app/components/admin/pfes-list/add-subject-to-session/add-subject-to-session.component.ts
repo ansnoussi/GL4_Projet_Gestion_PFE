@@ -20,8 +20,6 @@ export class AddSubjectToSessionComponent implements OnInit {
 
 
    onAddSession(){
-     console.log('session to add to subject');
-     console.log(this.session);
      this.sessionService.onAddSessionToSubject(this.session, this.time);
    }
 

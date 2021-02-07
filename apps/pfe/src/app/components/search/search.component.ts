@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AdminService } from '../../services/admin/admin.service';
+import { UniversityYear } from '../../models/UniversityYear';
 
 @Component({
   selector: 'gl4-search',
@@ -7,13 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  constructor() { }
+  universityYears: UniversityYear[] = [];
+  @Output() public universityYear = new EventEmitter<string>();
+  @Output() public search = new EventEmitter<string>();
+  universityYearSelected: UniversityYear;
+  query = '';
 
 
-  universityYears = ['2020/2021','2019/2020','2018/2019'];
-  public universityYearSelected = '2020/2021';
+
+  constructor(private adminService: AdminService) {
+    this.universityYears = adminService.getUniversityYears();
+  }
+
+
 
   ngOnInit(): void {
+  }
+
+  onUniversityYearSelectedChange(){
+    this.universityYear.emit(this.universityYearSelected.name);
+  }
+
+  onSearchChange(){
+    this.search.emit(this.query.toLowerCase());
   }
 
 }

@@ -25,7 +25,6 @@ import { StudentAddSubjectComponent } from './components/student/student-add-sub
 import { AdminComponent } from './components/admin/admin.component';
 import { EnseignantComponent } from './components/enseignant/enseignant.component';
 import { ItemPfeComponent } from './components/enseignant/item-pfe/item-pfe.component';
-import { ItemEncadrementComponent } from './components/enseignant/item-encadrement/item-encadrement.component';
 import { StudentComponent } from './components/student/student.component';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/student/navigation/sidenav-list/sidenav-list.component';
@@ -50,6 +49,7 @@ import { PfesListComponent } from './components/admin/pfes-list/pfes-list.compon
 import { PfeItemAdminComponent } from './components/admin/pfes-list/pfe-item-admin/pfe-item-admin.component';
 import { ImportDataFromFileComponent } from './components/admin/import-data-from-file/import-data-from-file.component';
 import { AddSubjectToSessionComponent } from './components/admin/pfes-list/add-subject-to-session/add-subject-to-session.component';
+import { HomeComponent } from './components/student/home/home.component';
 
 
 
@@ -59,7 +59,6 @@ import { AddSubjectToSessionComponent } from './components/admin/pfes-list/add-s
     AdminComponent,
     EnseignantComponent,
     ItemPfeComponent,
-    ItemEncadrementComponent,
     StudentComponent,
     StudentAddSubjectComponent,
     HeaderComponent,
@@ -79,7 +78,8 @@ import { AddSubjectToSessionComponent } from './components/admin/pfes-list/add-s
     PfesListComponent,
     PfeItemAdminComponent,
     ImportDataFromFileComponent,
-    AddSubjectToSessionComponent],
+    AddSubjectToSessionComponent,
+    HomeComponent],
   imports: [BrowserModule,
     HttpClientModule,
     AppRoutingModule,

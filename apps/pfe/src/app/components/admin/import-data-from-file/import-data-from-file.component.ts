@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import * as XLSX from 'xlsx';
 import { AdminService } from '../../../services/admin/admin.service';
 
@@ -9,8 +9,7 @@ import { AdminService } from '../../../services/admin/admin.service';
 })
 export class ImportDataFromFileComponent implements OnInit {
 
-  /** File extension that accepted, same as 'accept' of <input type="file" />.
-   By the default, it's set to 'image/*'. */
+
   @Input() accept = '.csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel';
 
   uploadComplete = false;
@@ -49,10 +48,7 @@ export class ImportDataFromFileComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.data);
-    console.log("Length" + this.data[0].length);
     if(this.data[0].length === 12){
-      console.log("Debut ajout Professor")
       this.data.forEach(professor => {
         this.adminService.addProfessor({
           ID: professor[0],
@@ -70,8 +66,7 @@ export class ImportDataFromFileComponent implements OnInit {
         })
       })
     }
-    else {
-      console.log("Debut ajout Etudiant")
+    else if(this.data[0].length === 13) {
       this.data.forEach(student => {
         this.adminService.addStudent({
           ID: student[0],
@@ -90,9 +85,9 @@ export class ImportDataFromFileComponent implements OnInit {
         })
       })
     }
-
-    console.log(this.adminService.getProfessors())
-    console.log(this.adminService.getStudents())
+    else {
+      console.log("Invalid Data !")
+    }
 
   }
 
